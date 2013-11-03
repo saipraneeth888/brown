@@ -1,4 +1,21 @@
+$("#addbutton").click(function () {
 
+    //simple image
+    var image = new Image();
+    image.onload = function () {
+        var image1 = new Kinetic.Image({
+            x: 0,
+            y: 0,
+            width: 300,
+            height: 300,
+            draggable: true,
+            image: image
+        });
+        layer.add(image1);
+        layer.draw();
+    }
+    image.src = "icon01.svg";
+});
 
 
 function drawImage(imageObj) {
