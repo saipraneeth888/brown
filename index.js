@@ -1,3 +1,6 @@
+
+
+
 function drawImage(imageObj) {
 	var stage = new Kinetic.Stage({
 	  container: "container",
