@@ -108,7 +108,7 @@ function addBarAnchor(group, x1, y1, x2, y2, name)
     var anchor = new Kinetic.Line({
                                   points:[x1,y1,x2,y2],
                                   stroke: 'green',
-                                  strokeWidth: 5,
+                                  strokeWidth: 2,
                                   name: name,
                                   draggable: true,
                                   dragOnTop: false
@@ -171,7 +171,7 @@ function addCornerAnchor(group,x,y,name)
                                     y: y,
                                     stroke:'red',
                                     strokeWidth: 2,
-                                    radius:8,
+                                    radius:4,
                                     name: name,
                                     draggable: true,
                                     dragOnTop: false
@@ -239,8 +239,8 @@ function drawImage(imageObj) {
                                  y: 0,
                                  
                                  image: imageObj,
-                                 width: 250,
-                                 height: 250,
+                                 width: 100,
+                                 height: 100,
                                  name: 'image'
                                  });
     
