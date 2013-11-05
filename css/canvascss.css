@@ -6,3 +6,23 @@
     margin:auto;
     margin-top: 10px;
 }
+body{
+    background-color: pink;
+}
+.pallete{
+    margin: 0;
+    padding: 1px;
+    boarder: 1px grey solid;
+    
+}
+.pallete img{
+    width:50px;
+    height: 60px;
+    border: 1px grey solid;
+    padding: 4px;
+}
+
+.pallete ul li{
+    display: inline;
+    list-style-type: none;
+}
