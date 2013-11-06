@@ -36,12 +36,14 @@ function updateCorner(anchor) {
 function addCornerAnchor(group,x,y,name)
 {
     var layer = group.getLayer();
+    var image = group.get('.image')[0];
+    var width = image.getWidth()/2;
     var anchor = new Kinetic.Circle({
                                     x: x,
                                     y: y,
                                     stroke:'red',
                                     strokeWidth: 2,
-                                    radius:4,
+                                    radius:width,
                                     name: name,
                                     draggable: true,
                                     dragOnTop: false
