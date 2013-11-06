@@ -1,3 +1,5 @@
+
+
 window.onload = setStage;
 
 function setStage() {
@@ -27,7 +29,8 @@ image.onload = function () {
 }
 image.src = "https://dl.dropboxusercontent.com/u/139992952/stackoverflow/KoolAid
 Man.png";
-
+}
+/*
 $("#body01").click(function () {
 
         var image = new Image();
@@ -44,6 +47,8 @@ $("#body01").click(function () {
         layer.draw();
 } 
 image.src = "img/pic/body01.svg";
+});
+}*/
 /*
 function drawImage(imageObj) {
 	var stage = new Kinetic.Stage({
@@ -78,4 +83,6 @@ function drawImage(imageObj) {
 	imageObj.onload = function() {
 	  drawImage(this);
 	};
-	imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';*/
+	imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
+*/
+
