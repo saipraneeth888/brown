@@ -41,8 +41,8 @@ function addCornerAnchor(group,x,y,name)
     var anchor = new Kinetic.Circle({
                                     x: x,
                                     y: y,
-                                    stroke:'red',
-                                    strokeWidth: 2,
+/*                                    stroke:'red',
+                                    strokeWidth: 0,*/
                                     radius:width,
                                     name: name,
                                     draggable: true,
