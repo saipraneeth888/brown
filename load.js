@@ -31,17 +31,26 @@ $("#body01").click(function () {
 
         var image = new Image();
         image.onload = function () {
-        var image2 = new Kinetic.Image({
-        x: 0,
-        y: 0,
-        width: 350,
-        height: 350,
-        image: image,
-        draggable: true
-        });
-        layer.add(image2);
-        layer.draw();
-} 
+            var image2 = new Kinetic.Image({
+                x: 0,
+                y: 0,
+                width: 350,
+                height: 350,
+                image: image,
+                name: 'image'
+                });
+            var imageGroup = new Kinetic.Group({
+                                       x: 0,
+                                       y: 0,
+                                       draggable: true
+                                       });
+            imageGroup.add(image2);
+    
+            // add the layer to the stage
+            layer.add(imageGroup);
+            addAnchors(image2, imageGroup);
+            layer.draw();
+        } 
 image.src = "img/pic/body01.svg";
 });
 
@@ -55,10 +64,19 @@ $("#body02").click(function () {
         width: 350,
         height: 350,
         image: image,
-        draggable: true
+        name: 'image'
         });
-        layer.add(image2);
-        layer.draw();
+        var imageGroup = new Kinetic.Group({
+                                       x: 0,
+                                       y: 0,
+                                       draggable: true
+                                       });
+            imageGroup.add(image2);
+    
+            // add the layer to the stage
+            layer.add(imageGroup);
+            addAnchors(image2, imageGroup);
+            layer.draw();
 }
 image.src = "img/pic/body02.svg";
 });
@@ -73,10 +91,19 @@ $("#hand01").click(function () {
         width: 350,
         height: 350,
         image: image,
-        draggable: true
+        name: 'image'
         });
-        layer.add(image2);
-        layer.draw();
+        var imageGroup = new Kinetic.Group({
+                                       x: 0,
+                                       y: 0,
+                                       draggable: true
+                                       });
+            imageGroup.add(image2);
+    
+            // add the layer to the stage
+            layer.add(imageGroup);
+            addAnchors(image2, imageGroup);
+            layer.draw();
 }
 image.src = "img/pic/hand01.svg";
 });
@@ -91,10 +118,19 @@ $("#hand02").click(function () {
         width: 350,
         height: 350,
         image: image,
-        draggable: true
+        name: 'image'
         });
-        layer.add(image2);
-        layer.draw();
+        var imageGroup = new Kinetic.Group({
+                                       x: 0,
+                                       y: 0,
+                                       draggable: true
+                                       });
+            imageGroup.add(image2);
+    
+            // add the layer to the stage
+            layer.add(imageGroup);
+            addAnchors(image2, imageGroup);
+            layer.draw();
 }
 image.src = "img/pic/hand02.svg";
 });
@@ -109,10 +145,19 @@ $("#headA01").click(function () {
         width: 350,
         height: 350,
         image: image,
-        draggable: true
+        name: 'image'
         });
-        layer.add(image2);
-        layer.draw();
+        var imageGroup = new Kinetic.Group({
+                                       x: 0,
+                                       y: 0,
+                                       draggable: true
+                                       });
+            imageGroup.add(image2);
+    
+            // add the layer to the stage
+            layer.add(imageGroup);
+            addAnchors(image2, imageGroup);
+            layer.draw();
 }
 image.src = "img/pic/headA01.svg";
 });
@@ -127,10 +172,19 @@ $("#headA02").click(function () {
         width: 350,
         height: 350,
         image: image,
-        draggable: true
+        name: 'image'
         });
-        layer.add(image2);
-        layer.draw();
+        var imageGroup = new Kinetic.Group({
+                                       x: 0,
+                                       y: 0,
+                                       draggable: true
+                                       });
+            imageGroup.add(image2);
+    
+            // add the layer to the stage
+            layer.add(imageGroup);
+            addAnchors(image2, imageGroup);
+            layer.draw();
 }
 image.src = "img/pic/headA02.svg";
 });
@@ -144,10 +198,19 @@ $("#headB01").click(function () {
         width: 350,
         height: 350,
         image: image,
-        draggable: true
+        name: 'image'
         });
-        layer.add(image2);
-        layer.draw();
+        var imageGroup = new Kinetic.Group({
+                                       x: 0,
+                                       y: 0,
+                                       draggable: true
+                                       });
+            imageGroup.add(image2);
+    
+            // add the layer to the stage
+            layer.add(imageGroup);
+            addAnchors(image2, imageGroup);
+            layer.draw();
 }
 image.src = "img/pic/headB01.svg";
 });
@@ -162,10 +225,19 @@ $("#headB02").click(function () {
         width: 350,
         height: 350,
         image: image,
-        draggable: true
+        name: 'image'
         });
-        layer.add(image2);
-        layer.draw();
+        var imageGroup = new Kinetic.Group({
+                                       x: 0,
+                                       y: 0,
+                                       draggable: true
+                                       });
+            imageGroup.add(image2);
+    
+            // add the layer to the stage
+            layer.add(imageGroup);
+            addAnchors(image2, imageGroup);
+            layer.draw();
 }
 image.src = "img/pic/headB02.svg";
 });

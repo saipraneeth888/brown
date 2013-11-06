@@ -37,11 +37,11 @@ function addCornerAnchor(group,x,y,name)
 {
     var layer = group.getLayer();
     var image = group.get('.image')[0];
-    var width = image.getWidth()/2;
+    var width = image.getWidth()/4;
     var anchor = new Kinetic.Circle({
                                     x: x,
-                                    y: y,
-/*                                    stroke:'red',
+                                    y: y,/*
+                                    stroke:'red',
                                     strokeWidth: 0,*/
                                     radius:width,
                                     name: name,
@@ -86,7 +86,7 @@ function addAnchors(kinImage, imgGroup) {
     addCornerAnchor(imgGroup, kinImage.getWidth(),kinImage.getHeight(), 'botright');
     
 }
-
+/*
 function drawImage(imageObj) {
     var stage = new Kinetic.Stage({
                                   container: 'container',
@@ -134,3 +134,4 @@ imageObj.onload = function() {
 };
 
 imageObj.src = 'img/headB02.svg';
+*/
