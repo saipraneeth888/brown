@@ -1,4 +1,4 @@
-
+/*
 
 window.onload = setStage;
 
@@ -29,7 +29,7 @@ image.onload = function () {
 }
 image.src = "https://dl.dropboxusercontent.com/u/139992952/stackoverflow/KoolAid
 Man.png";
-}
+}*/
 /*
 $("#body01").click(function () {
 
