@@ -261,4 +261,31 @@ $("#headB02").click(function () {
 }
 image.src = "img/pic/headB02.svg";
 });
+
+$("#prop01").click(function () {
+
+        var image = new Image();
+        image.onload = function () {
+        var image2 = new Kinetic.Image({
+        x: 0,
+        y: 0,
+        width: 150,
+        height: 150,
+        image: image,
+        name: 'image'
+        });
+        var imageGroup = new Kinetic.Group({
+                                       x: 0,
+                                       y: 0,
+                                       draggable: true
+                                       });
+            imageGroup.add(image2);
+    
+            // add the layer to the stage
+            layer.add(imageGroup);
+            addAnchors(image2, imageGroup);
+            layer.draw();
+}
+image.src = "img/pic/prop01.svg";
+});
 }
