@@ -108,7 +108,7 @@ function addAnchors(kinImage, imgGroup) {
     
 }
 
-function drawImage(imageObj) {
+/*function drawImage(imageObj) {
     var stage = new Kinetic.Stage({
                                   container: 'container',
                                   width: 500,
@@ -154,4 +154,4 @@ imageObj.onload = function() {
     drawImage(this);
 };
 
-imageObj.src = 'img/headA03.svg';
+imageObj.src = 'img/headA03.svg';*/
