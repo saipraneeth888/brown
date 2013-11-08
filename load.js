@@ -25,7 +25,8 @@ image.onload = function () {
     layer.draw();
 
 }
-image.src = "img/background.svg";
+image.src = "img/Background.svg";
+
 $("#addbutton").click(function () {
     // simple label
     var label = new Kinetic.Label({
