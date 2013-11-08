@@ -30,6 +30,10 @@ function updateCorner(anchor) {
     var height = botright.getY()-topleft.getY();
     if (width && height){
         img.setSize(width,height);
+        topleft.setRadius(width/3);
+        botleft.setRadius(width/3);
+        topright.setRadius(width/3);
+        botright.setRadius(width/3);
     }
 }
 
@@ -37,13 +41,30 @@ function addCornerAnchor(group,x,y,name)
 {
     var layer = group.getLayer();
     var image = group.get('.image')[0];
-    var width = image.getWidth()/4;
-    var anchor = new Kinetic.Circle({
+    var width = image.getWidth()/3;
+    var deg = 0;
+    switch (name){
+      case 'topright':
+        deg = +90;
+        break;
+      case 'topleft':
+        deg = 0;
+        break;
+      case 'botleft':
+        deg = -90;
+        break;
+      case 'botright':
+        deg = +180;
+          break;
+    }
+    var anchor = new Kinetic.Wedge({
                                     x: x,
-                                    y: y,/*
+                                    y: y,
                                     stroke:'red',
-                                    strokeWidth: 0,*/
+                                    strokeWidth: 1,
                                     radius:width,
+                                    angleDeg: 90,
+                                    rotationDeg: deg,
                                     name: name,
                                     draggable: true,
                                     dragOnTop: false
@@ -86,7 +107,7 @@ function addAnchors(kinImage, imgGroup) {
     addCornerAnchor(imgGroup, kinImage.getWidth(),kinImage.getHeight(), 'botright');
     
 }
-/*
+
 function drawImage(imageObj) {
     var stage = new Kinetic.Stage({
                                   container: 'container',
@@ -133,5 +154,4 @@ imageObj.onload = function() {
     drawImage(this);
 };
 
-imageObj.src = 'img/headB02.svg';
-*/
+imageObj.src = 'img/headA03.svg';
