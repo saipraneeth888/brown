@@ -9,7 +9,7 @@ var stage = new Kinetic.Stage({
 var layer = new Kinetic.Layer();
 stage.add(layer);
 
-/*
+
 var image = new Image();
 image.onload = function () {
 
@@ -25,8 +25,7 @@ image.onload = function () {
     layer.draw();
 
 }
-image.src = "https://dl.dropboxusercontent.com/u/139992952/stackoverflow/KoolAidMan.png";
-*/
+image.src = "img/background.svg";
 $("#addbutton").click(function () {
     // simple label
     var label = new Kinetic.Label({
@@ -55,8 +54,8 @@ $("#body01").click(function () {
             var image2 = new Kinetic.Image({
                 x: 0,
                 y: 0,
-                width: 350,
-                height: 350,
+                width: 150,
+                height: 150,
                 image: image,
                 name: 'image'
                 });
@@ -82,8 +81,8 @@ $("#body02").click(function () {
         var image2 = new Kinetic.Image({
         x: 0,
         y: 0,
-        width: 350,
-        height: 350,
+        width: 150,
+        height: 150,
         image: image,
         name: 'image'
         });
@@ -109,8 +108,8 @@ $("#hand01").click(function () {
         var image2 = new Kinetic.Image({
         x: 0,
         y: 0,
-        width: 350,
-        height: 350,
+        width: 150,
+        height: 150,
         image: image,
         name: 'image'
         });
@@ -136,8 +135,8 @@ $("#hand02").click(function () {
         var image2 = new Kinetic.Image({
         x: 0,
         y: 0,
-        width: 350,
-        height: 350,
+        width: 150,
+        height: 150,
         image: image,
         name: 'image'
         });
@@ -163,8 +162,8 @@ $("#headA01").click(function () {
         var image2 = new Kinetic.Image({
         x: 0,
         y: 0,
-        width: 350,
-        height: 350,
+        width: 150,
+        height: 150,
         image: image,
         name: 'image'
         });
@@ -190,8 +189,8 @@ $("#headA02").click(function () {
         var image2 = new Kinetic.Image({
         x: 0,
         y: 0,
-        width: 350,
-        height: 350,
+        width: 150,
+        height: 150,
         image: image,
         name: 'image'
         });
@@ -216,8 +215,8 @@ $("#headB01").click(function () {
         var image2 = new Kinetic.Image({
         x: 0,
         y: 0,
-        width: 350,
-        height: 350,
+        width: 150,
+        height: 150,
         image: image,
         name: 'image'
         });
@@ -243,8 +242,8 @@ $("#headB02").click(function () {
         var image2 = new Kinetic.Image({
         x: 0,
         y: 0,
-        width: 350,
-        height: 350,
+        width: 150,
+        height: 150,
         image: image,
         name: 'image'
         });
