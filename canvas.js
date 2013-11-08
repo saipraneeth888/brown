@@ -60,8 +60,8 @@ function addCornerAnchor(group,x,y,name)
     var anchor = new Kinetic.Wedge({
                                     x: x,
                                     y: y,
-                                    stroke:'red',
-                                    strokeWidth: 1,
+/*                                    stroke:'red',
+                                    strokeWidth: 1,*/
                                     radius:width,
                                     angleDeg: 90,
                                     rotationDeg: deg,
