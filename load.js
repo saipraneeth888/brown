@@ -9,7 +9,7 @@ var stage = new Kinetic.Stage({
 var layer = new Kinetic.Layer();
 stage.add(layer);
 
-
+var BackImg = null;
 var image = new Image();
 image.onload = function () {
 
@@ -18,12 +18,19 @@ image.onload = function () {
         y: 0,
         image: image,
     });
-    layer.add(image1);
+    BackImg = image1;
+	layer.add(image1);
 
     layer.draw();
 
 }
 image.src = "img/Background.svg";
+
+$("#changebackground").click(function () {
+	BackImg.moveToTop();
+	BackImg.src = "img/pic/body01.svg";
+	layer.draw();
+});
 
 $("#addbutton").click(function () {
     // simple label
