@@ -4,7 +4,7 @@ function setStage() {
 var stage = new Kinetic.Stage({
     container: 'container',
     width: (window.innerWidth),
-    height: 300
+    height: 500
 });
 var layer = new Kinetic.Layer();
 stage.add(layer);
@@ -16,8 +16,6 @@ image.onload = function () {
     var image1 = new Kinetic.Image({
         x: 0,
         y: 0,
-        width: 300,
-        height: 300,
         image: image,
     });
     layer.add(image1);
