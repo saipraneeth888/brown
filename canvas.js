@@ -7,20 +7,49 @@ function updateCorner(anchor) {
     var anchorX = anchor.getX();
     var anchorY = anchor.getY();
     var img = group.get('.image')[0];
+    var m = img.getHeight()/img.getWidth();
     switch (anchor.getName()) {
         case 'topleft':
+            if ((botleft.getY()-anchorY) < m*(topright.getX()-anchorX)) {
+                anchorY = -m*(topright.getX()-anchorX)+botleft.getY();
+            } else {
+                anchorX = 1/m*(anchorY-botleft.getY())+topright.getX();
+            }
+            topleft.setX(anchorX);
+            topleft.setY(anchorY);
             topright.setY(anchorY);
             botleft.setX(anchorX);
             break;
         case 'topright':
+            if (botright.getY()-anchorY < m*(anchorX-topleft.getX())) {
+                anchorY = -m*(anchorX-topleft.getX())+botright.getY();
+            } else {
+                anchorX = -1/m*(anchorY-botright.getY())+topleft.getX();
+            }
+            topright.setX(anchorX);
+            topright.setY(anchorY);
             topleft.setY(anchorY);
             botright.setX(anchorX);
             break;
         case 'botleft':
+            if (anchorY-topleft.getY() < m*(botright.getX()-anchorX)) {
+                anchorY = m*(botright.getX()-anchorX)+topleft.getY();
+            } else {
+                anchorX = -1/m*(anchorY-topleft.getY())+botright.getX();
+            }
+            botleft.setX(anchorX);
+            botleft.setY(anchorY);
             topleft.setX(anchorX);
             botright.setY(anchorY);
             break;
         case 'botright':
+            if (anchorY-topright.getY() < m*(anchorX-botleft.getX())) {
+                anchorY = m*(anchorX-botleft.getX())+topright.getY();
+            } else {
+                anchorX = 1/m*(anchorY-topright.getY())+botleft.getX();
+            }
+            botright.setX(anchorX);
+            botright.setY(anchorY);
             topright.setX(anchorX);
             botleft.setY(anchorY);
             break;
@@ -55,12 +84,12 @@ function addCornerAnchor(group,x,y,name)
         break;
       case 'botright':
         deg = +180;
-          break;
+        break;
     }
     var anchor = new Kinetic.Wedge({
                                     x: x,
-                                    y: y,
-/*                                    stroke:'red',
+                                    y: y,/*
+                                    stroke:'red',
                                     strokeWidth: 1,*/
                                     radius:width,
                                     angleDeg: 90,
@@ -107,8 +136,8 @@ function addAnchors(kinImage, imgGroup) {
     addCornerAnchor(imgGroup, kinImage.getWidth(),kinImage.getHeight(), 'botright');
     
 }
-
-/*function drawImage(imageObj) {
+/*
+function drawImage(imageObj) {
     var stage = new Kinetic.Stage({
                                   container: 'container',
                                   width: 500,
@@ -154,4 +183,5 @@ imageObj.onload = function() {
     drawImage(this);
 };
 
-imageObj.src = 'img/headA03.svg';*/
+imageObj.src = 'img/headA03.svg';
+*/
