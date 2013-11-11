@@ -3,8 +3,8 @@ window.onload = setStage;
 function setStage() {
 var stage = new Kinetic.Stage({
     container: 'container',
-    width: (window.innerWidth),
-    height: 300
+    width: window.innerWidth,
+    height: window.innerHeight
 });
 var layer = new Kinetic.Layer();
 stage.add(layer);
@@ -16,9 +16,9 @@ image.onload = function () {
     var image1 = new Kinetic.Image({
         x: 0,
         y: 0,
-        width: 300,
-        height: 300,
-        image: image,
+        width: document.getElementById("container").offsetWidth,
+        height: document.getElementById("container").offsetHeight,
+        image: image
     });
     layer.add(image1);
 
@@ -26,6 +26,7 @@ image.onload = function () {
 
 }
 image.src = "img/Background.svg";
+
 
 $("#addbutton").click(function () {
     // simple label
