@@ -9,10 +9,40 @@ var stage = new Kinetic.Stage({
 var layer = new Kinetic.Layer();
 stage.add(layer);
 
-var BackImg = null;
-var image = new Image();
-image.onload = function () {
+//Redefining the draw function
+function draw(image,drag,id,name){
+	if(typeof id == 'undefined') id = '';
+	if(typeof name == 'undefined') name = '';
+	var img = new Kinetic.Image({
+		image: image,
+		draggable: drag,
+		id: id,
+		name: name
+	});
+	layer.add(img);
+	layer.draw();
 
+	return img;
+}
+
+var BackImg = null;
+var mainImage = new Image();
+mainImage.onload = function () {
+    draw(mainImage,true, 'mainImageId');
+};
+mainImage.src = "img/Background.svg";
+
+var mainImage2 = new Image();
+mainImage2.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';
+
+
+/*
+    var foregroundImage = new Image();
+    foregroundImage.onload = function () {
+	draw(foregroundImage,false);
+    };
+    foregroundImage.src = "img/Background.svg";*/
+/*
     var image1 = new Kinetic.Image({
         x: 0,
         y: 0,
@@ -27,10 +57,12 @@ image.onload = function () {
 
 }
 image.src = "img/Background.svg";
+*/
 
 $("#changebackground").click(function () {
-	BackImg.moveToTop();
-	BackImg.src = "img/pic/body01.svg";
+	layer.get('#mainImageId')[0].setImage(mainImage2);
+	//BackImg.moveToTop();
+	//BackImg.src = "img/pic/body01.svg";
 	layer.draw();
 });
 
