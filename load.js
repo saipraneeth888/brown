@@ -21,13 +21,10 @@ image.onload = function () {
     var image1 = new Kinetic.Image({
         x: 0,
         y: 0,
-<<<<<<< HEAD
         image: image,
-=======
         width: document.getElementById("container").offsetWidth,
         height: document.getElementById("container").offsetHeight,
         image: image
->>>>>>> 5d67168e49b6a484b8fe0fe1b0da8e1cf6862c93
     });
     BackImg = image1;
 	layer.add(image1);
