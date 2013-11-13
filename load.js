@@ -29,7 +29,7 @@ image.onload = function () {
     layer.draw();
 
 }
-image.src = "img/Background.svg";
+image.src = "img/background.svg";
 
 $("#changebackground").click(function () {
 	BackImg.moveToTop();
