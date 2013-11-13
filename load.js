@@ -3,8 +3,13 @@ window.onload = setStage;
 function setStage() {
 var stage = new Kinetic.Stage({
     container: 'container',
+<<<<<<< HEAD
     width: (window.innerWidth),
     height: 500
+=======
+    width: window.innerWidth,
+    height: window.innerHeight
+>>>>>>> 5d67168e49b6a484b8fe0fe1b0da8e1cf6862c93
 });
 var layer = new Kinetic.Layer();
 stage.add(layer);
@@ -16,7 +21,13 @@ image.onload = function () {
     var image1 = new Kinetic.Image({
         x: 0,
         y: 0,
+<<<<<<< HEAD
         image: image,
+=======
+        width: document.getElementById("container").offsetWidth,
+        height: document.getElementById("container").offsetHeight,
+        image: image
+>>>>>>> 5d67168e49b6a484b8fe0fe1b0da8e1cf6862c93
     });
     BackImg = image1;
 	layer.add(image1);
@@ -26,11 +37,14 @@ image.onload = function () {
 }
 image.src = "img/Background.svg";
 
+<<<<<<< HEAD
 $("#changebackground").click(function () {
 	BackImg.moveToTop();
 	BackImg.src = "img/pic/body01.svg";
 	layer.draw();
 });
+=======
+>>>>>>> 5d67168e49b6a484b8fe0fe1b0da8e1cf6862c93
 
 $("#addbutton").click(function () {
     // simple label
