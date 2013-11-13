@@ -18,7 +18,6 @@ image.onload = function () {
     var image1 = new Kinetic.Image({
         x: 0,
         y: 0,
-        image: image,
         width: document.getElementById("container").offsetWidth,
         height: document.getElementById("container").offsetHeight,
         image: image,
