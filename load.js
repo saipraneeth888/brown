@@ -21,7 +21,7 @@ image.onload = function () {
         image: image,
         width: document.getElementById("container").offsetWidth,
         height: document.getElementById("container").offsetHeight,
-        image: image
+        image: image,
     });
     BackImg = image1;
 	layer.add(image1);
