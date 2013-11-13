@@ -3,8 +3,6 @@ window.onload = setStage;
 function setStage() {
 var stage = new Kinetic.Stage({
     container: 'container',
-    width: (window.innerWidth),
-    height: 500
     width: window.innerWidth,
     height: window.innerHeight
 });
