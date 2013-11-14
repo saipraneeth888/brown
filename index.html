@@ -38,7 +38,23 @@
   <br><br>
 <input id="newtext" type="text" value="Hello!">
 <a href id="addbutton" data-role="button" data-inline="true" data-mini="true">Add this text</a>
-<a id="changebackground" data-role="button" data-inline="true" data-mini="true">Change Background</a> 
+  
+  <a href="#popupBackground" data-rel="popup" data-role="button" data-inline="true" data-mini="true" data-theme="b" data-transition="pop">Choose a Background</a>
+  <div data-role="popup" id="popupBackground" data-theme="none">
+    <div data-role="collapsible-set" data-theme="b" data-content-theme="c" data-collapsed-icon="arrow-r"data-expanded-icon="arrow-d" style="margin:10; width:250px;">
+      <div data-role="collapsible" data-inset="false">
+        <h2>Background</h2>
+          <ul data-role="listview">
+            <li><a href id="Background01" data-rel="dialog">
+		<img src="img/background.svg" class="ui-li-thumb">
+		A Tree</a></li>
+            <li><a href id="2" data-rel="dialog">Yoda</a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+  <a id="changebackground" data-role="button" data-inline="true" data-mini="true">Change Background</a> 
   <a href="#pagetwo" data-role="button" data-inline="true" data-mini="true">Images</a>
   
   

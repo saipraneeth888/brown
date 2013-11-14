@@ -45,6 +45,8 @@ $("#changebackground").click(function () {
 	layer.draw();
 });
 
+
+
 $("#addbutton").click(function () {
     // simple label
     var label = new Kinetic.Label({
