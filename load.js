@@ -6,6 +6,7 @@ var stage = new Kinetic.Stage({
     width: window.innerWidth,
     height: window.innerHeight
 });
+
 var layer = new Kinetic.Layer();
 stage.add(layer);
 
@@ -16,6 +17,8 @@ function draw(image,drag,id,name){
 	var img = new Kinetic.Image({
 		image: image,
 		draggable: drag,
+		width: document.getElementById("container").offsetWidth,
+		height: document.getElementById("container").offsetHeight,
 		id: id,
 		name: name
 	});
