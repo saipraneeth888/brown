@@ -343,7 +343,7 @@ $("#headB01").click(function () {
 }
 image.src = "img/pic/headB01.svg";
 });
-
+//a
 $("#headB02").click(function () {
 
         var image = new Image();
