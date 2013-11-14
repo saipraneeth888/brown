@@ -35,30 +35,6 @@ mainImage.src = "img/Background.svg";
 var mainImage2 = new Image();
 mainImage2.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';
 
-
-/*
-    var foregroundImage = new Image();
-    foregroundImage.onload = function () {
-	draw(foregroundImage,false);
-    };
-    foregroundImage.src = "img/Background.svg";*/
-/*
-    var image1 = new Kinetic.Image({
-        x: 0,
-        y: 0,
-        width: document.getElementById("container").offsetWidth,
-        height: document.getElementById("container").offsetHeight,
-        image: image,
-    });
-    BackImg = image1;
-	layer.add(image1);
-
-    layer.draw();
-
-}
-image.src = "img/Background.svg";
-*/
-
 $("#changebackground").click(function () {
 	layer.get('#mainImageId')[0].setImage(mainImage2);
 	//BackImg.moveToTop();
@@ -328,4 +304,6 @@ $("#prop01").click(function () {
 }
 image.src = "img/pic/prop01.svg";
 });
+
+
 }
