@@ -34,7 +34,7 @@ function draw(image,drag,id,name){
         y: 0,
         width: 300,
         height: 300,
-        image: image,
+     //   image: image,
     });
     layer.add(image2);
 

@@ -195,7 +195,6 @@ function addAnchors(kinImage, imgGroup) {
     
 }
 
-<<<<<<< HEAD
 
 /*
 function drawImage(imageObj) {
