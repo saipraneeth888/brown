@@ -13,14 +13,14 @@ stage.add(layer);
 var image = new Image();
 image.onload = function () {
 
-    var image1 = new Kinetic.Image({
+    var image2 = new Kinetic.Image({
         x: 0,
         y: 0,
         width: 300,
         height: 300,
         image: image,
     });
-    layer.add(image1);
+    layer.add(image2);
 
     layer.draw();
 
@@ -48,6 +48,8 @@ $("#addbutton").click(function () {
     layer.draw();
 });
 
+
+
 $("#body01").click(function () {
 
         var image = new Image();
@@ -65,8 +67,9 @@ $("#body01").click(function () {
                                        y: 0,
                                        draggable: true
                                        });
+        
             imageGroup.add(image2);
-    
+          
             // add the layer to the stage
             layer.add(imageGroup);
             addAnchors(image2, imageGroup);
@@ -93,7 +96,7 @@ $("#body02").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
-    
+        
             // add the layer to the stage
             layer.add(imageGroup);
             addAnchors(image2, imageGroup);

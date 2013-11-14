@@ -136,6 +136,8 @@ function addAnchors(kinImage, imgGroup) {
     addCornerAnchor(imgGroup, kinImage.getWidth(),kinImage.getHeight(), 'botright');
     
 }
+
+
 /*
 function drawImage(imageObj) {
     var stage = new Kinetic.Stage({
