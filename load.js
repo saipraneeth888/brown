@@ -16,7 +16,6 @@ function draw(image,drag,id,name){
 	if(typeof name == 'undefined') name = '';
 	var img = new Kinetic.Image({
 		image: image,
-		draggable: drag,
 		width: document.getElementById("container").offsetWidth,
 		height: document.getElementById("container").offsetHeight,
 		id: id,
@@ -48,6 +47,13 @@ mainImage.src = "img/Background.svg";
 var mainImage2 = new Image();
 mainImage2.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';
 
+$(".background").click(function () {
+    var newImage = new Image();
+    newImage.src = 'img/Backgrounds/' +$(this).attr('value');
+    layer.get('#mainImageId')[0].setImage(newImage);
+    layer.draw();
+});
+    
 $("#changebackground").click(function () {
 	layer.get('#mainImageId')[0].setImage(mainImage2);
 	//BackImg.moveToTop();
