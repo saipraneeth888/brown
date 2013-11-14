@@ -314,6 +314,12 @@ layer.on('dblclick', function(evt) {
         layer.draw();
 });
 
+layer.on('dblclick', function(evt) {
+        var shape = evt.targetNode
+        shape.remove();
+        layer.draw();
+});
+
 
 
 }

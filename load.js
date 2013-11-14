@@ -33,7 +33,7 @@ function draw(image,drag,id,name){
         x: 0,
         y: 0,
         width: 300,
-        height: 300,
+        height: 300
      //   image: image,
     });
     layer.add(image2);
@@ -330,5 +330,11 @@ $("#prop01").click(function () {
 image.src = "img/pic/prop01.svg";
 });
 
+
+layer.on('dblclick', function(evt) {
+        var shape = evt.targetNode
+        shape.remove();
+        layer.draw();
+});
 
 }
