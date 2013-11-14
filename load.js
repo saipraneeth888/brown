@@ -86,6 +86,19 @@ $("#addbutton").click(function () {
 });
 
 
+function writeMessage(message) {
+  text.setText(message);
+  layer.draw();
+}
+
+var text = new Kinetic.Text({
+    x: 10,
+    y: 10,
+    fontFamily: 'Calibri',
+    fontSize: 24,
+    text: '',
+    fill: 'black'
+});
 
 $("#body01").click(function () {
 
@@ -106,8 +119,16 @@ $("#body01").click(function () {
                                        });
         
             imageGroup.add(image2);
+            imageGroup.on('mouseover', function() {
+                writeMessage('Double Click to Remove');
+            }); 
+
+            imageGroup.on('mouseout', function() {
+                writeMessage('');
+            });
             // add the layer to the stage
             layer.add(imageGroup);
+            layer.add(text);
             addAnchors(image2, imageGroup);
             layer.draw();
         } 
@@ -132,9 +153,17 @@ $("#body02").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
+            imageGroup.on('mouseover', function() {
+                writeMessage('Double Click to Remove');
+            }); 
+
+            imageGroup.on('mouseout', function() {
+                writeMessage('');
+            });
         
             // add the layer to the stage
             layer.add(imageGroup);
+            layer.add(text);
             addAnchors(image2, imageGroup);
             layer.draw();
 }
@@ -159,9 +188,17 @@ $("#hand01").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
+            imageGroup.on('mouseover', function() {
+                writeMessage('Double Click to Remove');
+            }); 
+
+            imageGroup.on('mouseout', function() {
+                writeMessage('');
+            });
     
             // add the layer to the stage
             layer.add(imageGroup);
+            layer.add(text);
             addAnchors(image2, imageGroup);
             layer.draw();
 }
@@ -186,9 +223,17 @@ $("#hand02").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
+            imageGroup.on('mouseover', function() {
+                writeMessage('Double Click to Remove');
+            }); 
+
+            imageGroup.on('mouseout', function() {
+                writeMessage('');
+            });
     
             // add the layer to the stage
             layer.add(imageGroup);
+            layer.add(text);
             addAnchors(image2, imageGroup);
             layer.draw();
 }
@@ -214,8 +259,16 @@ $("#headA01").click(function () {
                                        });
             imageGroup.add(image2);
     
+            imageGroup.on('mouseover', function() {
+                writeMessage('Double Click to Remove');
+            }); 
+
+            imageGroup.on('mouseout', function() {
+                writeMessage('');
+            });
             // add the layer to the stage
             layer.add(imageGroup);
+            layer.add(text);
             addAnchors(image2, imageGroup);
             layer.draw();
 }
@@ -240,9 +293,17 @@ $("#headA02").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
+            imageGroup.on('mouseover', function() {
+                writeMessage('Double Click to Remove');
+            }); 
+
+            imageGroup.on('mouseout', function() {
+                writeMessage('');
+            });
     
             // add the layer to the stage
             layer.add(imageGroup);
+            layer.add(text);
             addAnchors(image2, imageGroup);
             layer.draw();
 }
@@ -266,9 +327,17 @@ $("#headB01").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
+            imageGroup.on('mouseover', function() {
+                writeMessage('Double Click to Remove');
+            }); 
+
+            imageGroup.on('mouseout', function() {
+                writeMessage('');
+            });
     
             // add the layer to the stage
             layer.add(imageGroup);
+            layer.add(text);
             addAnchors(image2, imageGroup);
             layer.draw();
 }
@@ -293,9 +362,17 @@ $("#headB02").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
+            imageGroup.on('mouseover', function() {
+                writeMessage('Double Click to Remove');
+            }); 
+
+            imageGroup.on('mouseout', function() {
+                writeMessage('');
+            });
     
             // add the layer to the stage
             layer.add(imageGroup);
+            layer.add(text);
             addAnchors(image2, imageGroup);
             layer.draw();
 }
@@ -320,9 +397,17 @@ $("#prop01").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
+            imageGroup.on('mouseover', function() {
+                writeMessage('Double Click to Remove');
+            }); 
+
+            imageGroup.on('mouseout', function() {
+                writeMessage('');
+            });
     
             // add the layer to the stage
             layer.add(imageGroup);
+            layer.add(text);
             addAnchors(image2, imageGroup);
             layer.draw();
 }
@@ -331,18 +416,10 @@ image.src = "img/pic/prop01.svg";
 
 
 layer.on('dblclick', function(evt) {
-        var shape = evt.targetNode
+        var shape = evt.targetNode.getParent();
         shape.remove();
         layer.draw();
 });
 
-//ONMOUSEOVER="popup('Link description here','yellow')"; ONMOUSEOUT="kill()"
-//layer.on('click', function(evt) {   
-//        var shape = evt.targetNode
-//        if(shape.getName() = "image"){
-//            popup('Link description here','yellow');
-//        }
-//});
-//
-//
+  
 }
