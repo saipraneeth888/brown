@@ -16,6 +16,7 @@ function draw(image,drag,id,name){
 	if(typeof name == 'undefined') name = '';
 	var img = new Kinetic.Image({
 		image: image,
+        draggable: drag,
 		width: document.getElementById("container").offsetWidth,
 		height: document.getElementById("container").offsetHeight,
 		id: id,
