@@ -106,7 +106,6 @@ $("#body01").click(function () {
                                        });
         
             imageGroup.add(image2);
-          
             // add the layer to the stage
             layer.add(imageGroup);
             addAnchors(image2, imageGroup);
@@ -337,4 +336,13 @@ layer.on('dblclick', function(evt) {
         layer.draw();
 });
 
+//ONMOUSEOVER="popup('Link description here','yellow')"; ONMOUSEOUT="kill()"
+//layer.on('click', function(evt) {   
+//        var shape = evt.targetNode
+//        if(shape.getName() = "image"){
+//            popup('Link description here','yellow');
+//        }
+//});
+//
+//
 }
