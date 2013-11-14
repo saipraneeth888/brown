@@ -1,0 +1,200 @@
+function updateCorner(anchor) {
+    var group = anchor.getParent();
+    var topleft = group.get('.topleft')[0];
+    var botleft = group.get('.botleft')[0];
+    var topright = group.get('.topright')[0];
+    var botright = group.get('.botright')[0];
+    var anchorX = anchor.getX();
+    var anchorY = anchor.getY();
+    var img = group.get('.image')[0];
+    var m = img.getHeight()/img.getWidth();
+    switch (anchor.getName()) {
+        case 'topleft':
+            if ((botleft.getY()-anchorY) < m*(topright.getX()-anchorX)) {
+                anchorY = -m*(topright.getX()-anchorX)+botleft.getY();
+            } else {
+                anchorX = 1/m*(anchorY-botleft.getY())+topright.getX();
+            }
+            topleft.setX(anchorX);
+            topleft.setY(anchorY);
+            topright.setY(anchorY);
+            botleft.setX(anchorX);
+            break;
+        case 'topright':
+            if (botright.getY()-anchorY < m*(anchorX-topleft.getX())) {
+                anchorY = -m*(anchorX-topleft.getX())+botright.getY();
+            } else {
+                anchorX = -1/m*(anchorY-botright.getY())+topleft.getX();
+            }
+            topright.setX(anchorX);
+            topright.setY(anchorY);
+            topleft.setY(anchorY);
+            botright.setX(anchorX);
+            break;
+        case 'botleft':
+            if (anchorY-topleft.getY() < m*(botright.getX()-anchorX)) {
+                anchorY = m*(botright.getX()-anchorX)+topleft.getY();
+            } else {
+                anchorX = -1/m*(anchorY-topleft.getY())+botright.getX();
+            }
+            botleft.setX(anchorX);
+            botleft.setY(anchorY);
+            topleft.setX(anchorX);
+            botright.setY(anchorY);
+            break;
+        case 'botright':
+            if (anchorY-topright.getY() < m*(anchorX-botleft.getX())) {
+                anchorY = m*(anchorX-botleft.getX())+topright.getY();
+            } else {
+                anchorX = 1/m*(anchorY-topright.getY())+botleft.getX();
+            }
+            botright.setX(anchorX);
+            botright.setY(anchorY);
+            topright.setX(anchorX);
+            botleft.setY(anchorY);
+            break;
+    }
+    img.setPosition(topleft.getPosition());
+    var width = topright.getX()-topleft.getX();
+    var height = botright.getY()-topleft.getY();
+    if (width && height){
+        img.setSize(width,height);
+        topleft.setRadius(width/3);
+        botleft.setRadius(width/3);
+        topright.setRadius(width/3);
+        botright.setRadius(width/3);
+    }
+}
+
+
+
+
+
+function addCornerAnchor(group,x,y,name)
+{
+    var layer = group.getLayer();
+    var image = group.get('.image')[0];
+    var width = image.getWidth()/3;
+    var deg = 0;
+    switch (name){
+      case 'topright':
+        deg = +90;
+        break;
+      case 'topleft':
+        deg = 0;
+        break;
+      case 'botleft':
+        deg = -90;
+        break;
+      case 'botright':
+        deg = +180;
+        break;
+    }
+    var anchor = new Kinetic.Wedge({
+                                    x: x,
+                                    y: y,/*
+                                    stroke:'red',
+                                    strokeWidth: 1,*/
+                                    radius:width,
+                                    angleDeg: 90,
+                                    rotationDeg: deg,
+                                    name: name,
+                                    draggable: true,
+                                    dragOnTop: false
+    });
+    anchor.on('mouseover', function() {
+              switch(name) {
+                case 'topleft':
+                case 'botright':
+                    document.body.style.cursor = 'nwse-resize';
+                    break;
+                case 'botleft':
+                case 'topright':
+                    document.body.style.cursor = 'nesw-resize';
+                    break;
+              }
+              });
+    anchor.on('mouseout', function() {
+              document.body.style.cursor = 'default';
+              });
+    anchor.on('dragmove', function() { 
+              updateCorner(this);
+              layer.batchDraw();
+              });
+    anchor.on('mousedown touchstart', function() {
+              group.setDraggable(false);
+              this.moveToTop();
+              });
+    anchor.on('dragend', function() {
+              group.setDraggable(true);
+              layer.batchDraw();
+              });
+    switch (name) {
+      case 'topleft':
+        anchor.setDragBoundFunc(function(pos) {
+          var botright = group.get('.botright')[0];
+          var X = botright.getAbsolutePosition().x;
+          var Y = botright.getAbsolutePosition().y;
+          if (X >= pos.x) {
+            X = pos.x;
+          }
+          if (Y >= pos.y) {
+            Y = pos.y;
+          }
+          return {x:X, y:Y};
+        });
+        break;
+      case 'botright':
+      anchor.setDragBoundFunc(function(pos) {
+          var topleft = group.get('.topleft')[0];
+          var X = topleft.getAbsolutePosition().x;
+          var Y = topleft.getAbsolutePosition().y;
+          if (X <= pos.x) {
+            X = pos.x;
+          }
+          if (Y <= pos.y) {
+            Y = pos.y;
+          }
+          return {x:X, y:Y};
+        });
+        break;
+      case 'botleft':
+      anchor.setDragBoundFunc(function(pos) {
+          var topright = group.get('.topright')[0];
+          var X = topright.getAbsolutePosition().x;
+          var Y = topright.getAbsolutePosition().y;
+          if (X >= pos.x) {
+            X = pos.x;
+          }
+          if (Y <= pos.y) {
+            Y = pos.y;
+          }
+          return {x:X, y:Y};
+        });
+        break;
+      case 'topright':
+      anchor.setDragBoundFunc(function(pos) {
+          var botleft = group.get('.botleft')[0];
+          var X = botleft.getAbsolutePosition().x;
+          var Y = botleft.getAbsolutePosition().y;
+          if (X <= pos.x) {
+            X = pos.x;
+          }
+          if (Y >= pos.y) {
+            Y = pos.y;
+          }
+          return {x:X, y:Y};
+        });
+        break;
+    }
+    group.add(anchor);
+    
+}
+
+function addAnchors(kinImage, imgGroup) {
+    addCornerAnchor(imgGroup, 0,0, 'topleft');
+    addCornerAnchor(imgGroup, kinImage.getWidth(), 0, 'topright');
+    addCornerAnchor(imgGroup, 0,kinImage.getHeight(), 'botleft');
+    addCornerAnchor(imgGroup, kinImage.getWidth(),kinImage.getHeight(), 'botright');
+    
+}
