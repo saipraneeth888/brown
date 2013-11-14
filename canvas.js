@@ -125,6 +125,64 @@ function addCornerAnchor(group,x,y,name)
               group.setDraggable(true);
               layer.batchDraw();
               });
+    switch (name) {
+      case 'topleft':
+        anchor.setDragBoundFunc(function(pos) {
+          var botright = group.get('.botright')[0];
+          var X = botright.getAbsolutePosition().x;
+          var Y = botright.getAbsolutePosition().y;
+          if (X >= pos.x) {
+            X = pos.x;
+          }
+          if (Y >= pos.y) {
+            Y = pos.y;
+          }
+          return {x:X, y:Y};
+        });
+        break;
+      case 'botright':
+      anchor.setDragBoundFunc(function(pos) {
+          var topleft = group.get('.topleft')[0];
+          var X = topleft.getAbsolutePosition().x;
+          var Y = topleft.getAbsolutePosition().y;
+          if (X <= pos.x) {
+            X = pos.x;
+          }
+          if (Y <= pos.y) {
+            Y = pos.y;
+          }
+          return {x:X, y:Y};
+        });
+        break;
+      case 'botleft':
+      anchor.setDragBoundFunc(function(pos) {
+          var topright = group.get('.topright')[0];
+          var X = topright.getAbsolutePosition().x;
+          var Y = topright.getAbsolutePosition().y;
+          if (X >= pos.x) {
+            X = pos.x;
+          }
+          if (Y <= pos.y) {
+            Y = pos.y;
+          }
+          return {x:X, y:Y};
+        });
+        break;
+      case 'topright':
+      anchor.setDragBoundFunc(function(pos) {
+          var botleft = group.get('.botleft')[0];
+          var X = botleft.getAbsolutePosition().x;
+          var Y = botleft.getAbsolutePosition().y;
+          if (X <= pos.x) {
+            X = pos.x;
+          }
+          if (Y >= pos.y) {
+            Y = pos.y;
+          }
+          return {x:X, y:Y};
+        });
+        break;
+    }
     group.add(anchor);
     
 }
@@ -137,9 +195,13 @@ function addAnchors(kinImage, imgGroup) {
     
 }
 
+<<<<<<< HEAD
 
 /*
 function drawImage(imageObj) {
+=======
+/*function drawImage(imageObj) {
+>>>>>>> bb8898eb8639641ad9de9e8cc54c0d4ac64432d5
     var stage = new Kinetic.Stage({
                                   container: 'container',
                                   width: 500,
@@ -185,5 +247,5 @@ imageObj.onload = function() {
     drawImage(this);
 };
 
-imageObj.src = 'img/headA03.svg';
+imageObj.src = 'img/pic/headA03.svg';
 */

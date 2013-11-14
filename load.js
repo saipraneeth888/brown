@@ -3,16 +3,32 @@ window.onload = setStage;
 function setStage() {
 var stage = new Kinetic.Stage({
     container: 'container',
-    width: (window.innerWidth),
-    height: 300
+    width: window.innerWidth,
+    height: window.innerHeight
 });
+
 var layer = new Kinetic.Layer();
 stage.add(layer);
 
+//Redefining the draw function
+function draw(image,drag,id,name){
+	if(typeof id == 'undefined') id = '';
+	if(typeof name == 'undefined') name = '';
+	var img = new Kinetic.Image({
+		image: image,
+		draggable: drag,
+		width: document.getElementById("container").offsetWidth,
+		height: document.getElementById("container").offsetHeight,
+		id: id,
+		name: name
+	});
+	layer.add(img);
+	layer.draw();
 
-var image = new Image();
-image.onload = function () {
+	return img;
+}
 
+<<<<<<< HEAD
     var image2 = new Kinetic.Image({
         x: 0,
         y: 0,
@@ -21,11 +37,26 @@ image.onload = function () {
         image: image,
     });
     layer.add(image2);
+=======
+var BackImg = null;
+var mainImage = new Image();
+mainImage.onload = function () {
+    draw(mainImage,true, 'mainImageId');
+};
+mainImage.src = "img/Background.svg";
 
-    layer.draw();
+var mainImage2 = new Image();
+mainImage2.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';
 
-}
-image.src = "img/Background.svg";
+$("#changebackground").click(function () {
+	layer.get('#mainImageId')[0].setImage(mainImage2);
+	//BackImg.moveToTop();
+	//BackImg.src = "img/pic/body01.svg";
+	layer.draw();
+});
+>>>>>>> bb8898eb8639641ad9de9e8cc54c0d4ac64432d5
+
+
 
 $("#addbutton").click(function () {
     // simple label
@@ -292,4 +323,6 @@ $("#prop01").click(function () {
 }
 image.src = "img/pic/prop01.svg";
 });
+
+
 }
