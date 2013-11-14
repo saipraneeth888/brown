@@ -315,17 +315,5 @@ layer.on('dblclick', function(evt) {
 });
 
 
-/**function deleteByCorner(anchor) {
-    var group = anchor.getParent();
-    var topleft = group.get('.topleft')[0];
-    var botright = group.get('.botright')[0];
-    var img = group.get('.image')[0];
-    img.clear(topleft.getX(), topleft.getY(), botright.getX(), botright.getY());
-}**/
-
-$("#deleteButton").click(function () {
-    
-});
-
 
 }

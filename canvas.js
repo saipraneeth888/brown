@@ -195,7 +195,13 @@ function addAnchors(kinImage, imgGroup) {
     
 }
 
+<<<<<<< HEAD
+
+/*
+function drawImage(imageObj) {
+=======
 /*function drawImage(imageObj) {
+>>>>>>> bb8898eb8639641ad9de9e8cc54c0d4ac64432d5
     var stage = new Kinetic.Stage({
                                   container: 'container',
                                   width: 500,

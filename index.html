@@ -1,6 +1,7 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
@@ -10,12 +11,14 @@
   -->
   <script src="load.js"></script>
   <script src="canvas.js"></script>
+
   <style>
 	#container {
 	  border:solid 1px #ccc;
 	  margin-top: 10px;
 	  
 	  height:500px;
+	  
 	  background-color:lightblue;
 	}
         .thumbnail .con {
@@ -36,10 +39,27 @@
   <br><br>
 <input id="newtext" type="text" value="Hello!">
 <a href id="addbutton" data-role="button" data-inline="true" data-mini="true">Add this text</a>
-<a id="changebackground" data-role="button" data-inline="true" data-mini="true">Change Background</a> 
+  
+  <a href="#popupBackground" data-rel="popup" data-role="button" data-inline="true" data-mini="true" data-theme="b" data-transition="pop">Choose a Background</a>
+  <div data-role="popup" id="popupBackground" data-theme="none">
+    <div data-role="collapsible-set" data-theme="b" data-content-theme="c" data-collapsed-icon="arrow-r"data-expanded-icon="arrow-d" style="margin:10; width:250px;">
+      <div data-role="collapsible" data-inset="false">
+        <h2>Background</h2>
+          <ul data-role="listview">
+            <li><a href id="Background01" data-rel="dialog">
+		<img src="img/background.svg" class="ui-li-thumb">
+		A Tree</a></li>
+            <li><a href id="2" data-rel="dialog">Yoda</a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+  <a id="changebackground" data-role="button" data-inline="true" data-mini="true">Change Background</a> 
   <a href="#pagetwo" data-role="button" data-inline="true" data-mini="true">Images</a>
   
-  
+  <button id="delButton">Delete object</button> 
+
   </div>
   </div>
  
@@ -102,8 +122,6 @@
               </a>
             </div>
         </div>
-
-
   </div>
 </div>
 

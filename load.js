@@ -6,6 +6,7 @@ var stage = new Kinetic.Stage({
     width: window.innerWidth,
     height: window.innerHeight
 });
+
 var layer = new Kinetic.Layer();
 stage.add(layer);
 
@@ -16,6 +17,8 @@ function draw(image,drag,id,name){
 	var img = new Kinetic.Image({
 		image: image,
 		draggable: drag,
+		width: document.getElementById("container").offsetWidth,
+		height: document.getElementById("container").offsetHeight,
 		id: id,
 		name: name
 	});
@@ -24,6 +27,16 @@ function draw(image,drag,id,name){
 
 	return img;
 }
+
+
+    var image2 = new Kinetic.Image({
+        x: 0,
+        y: 0,
+        width: 300,
+        height: 300,
+        image: image,
+    });
+    layer.add(image2);
 
 var BackImg = null;
 var mainImage = new Image();
@@ -41,6 +54,8 @@ $("#changebackground").click(function () {
 	//BackImg.src = "img/pic/body01.svg";
 	layer.draw();
 });
+
+
 
 $("#addbutton").click(function () {
     // simple label
@@ -63,6 +78,8 @@ $("#addbutton").click(function () {
     layer.draw();
 });
 
+
+
 $("#body01").click(function () {
 
         var image = new Image();
@@ -80,8 +97,9 @@ $("#body01").click(function () {
                                        y: 0,
                                        draggable: true
                                        });
+        
             imageGroup.add(image2);
-    
+          
             // add the layer to the stage
             layer.add(imageGroup);
             addAnchors(image2, imageGroup);
@@ -108,7 +126,7 @@ $("#body02").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
-    
+        
             // add the layer to the stage
             layer.add(imageGroup);
             addAnchors(image2, imageGroup);
