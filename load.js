@@ -158,14 +158,6 @@ $("#hand01").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
-            imageGroup.on('mouseover', function() {
-                writeMessage('Double Click to Remove');
-            }); 
-
-            imageGroup.on('mouseout', function() {
-                writeMessage('');
-            });
-    
             // add the layer to the stage
             layer.add(imageGroup);
             
@@ -193,13 +185,6 @@ $("#hand02").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
-            imageGroup.on('mouseover', function() {
-                writeMessage('Double Click to Remove');
-            }); 
-
-            imageGroup.on('mouseout', function() {
-                writeMessage('');
-            });
     
             // add the layer to the stage
             layer.add(imageGroup);
@@ -229,13 +214,6 @@ $("#headA01").click(function () {
                                        });
             imageGroup.add(image2);
     
-            imageGroup.on('mouseover', function() {
-                writeMessage('Double Click to Remove');
-            }); 
-
-            imageGroup.on('mouseout', function() {
-                writeMessage('');
-            });
             // add the layer to the stage
             layer.add(imageGroup);
             
@@ -263,14 +241,7 @@ $("#headA02").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
-            imageGroup.on('mouseover', function() {
-                writeMessage('Double Click to Remove');
-            }); 
 
-            imageGroup.on('mouseout', function() {
-                writeMessage('');
-            });
-    
             // add the layer to the stage
             layer.add(imageGroup);
             
@@ -297,13 +268,6 @@ $("#headB01").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
-            imageGroup.on('mouseover', function() {
-                writeMessage('Double Click to Remove');
-            }); 
-
-            imageGroup.on('mouseout', function() {
-                writeMessage('');
-            });
     
             // add the layer to the stage
             layer.add(imageGroup);
@@ -332,14 +296,6 @@ $("#headB02").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
-            imageGroup.on('mouseover', function() {
-                writeMessage('Double Click to Remove');
-            }); 
-
-            imageGroup.on('mouseout', function() {
-                writeMessage('');
-            });
-    
             // add the layer to the stage
             layer.add(imageGroup);
             
@@ -367,14 +323,6 @@ $("#prop01").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
-            imageGroup.on('mouseover', function() {
-                writeMessage('Double Click to Remove');
-            }); 
-
-            imageGroup.on('mouseout', function() {
-                writeMessage('');
-            });
-    
             // add the layer to the stage
             layer.add(imageGroup);
             
@@ -403,7 +351,5 @@ layer.on('dblclick', function(evt) {
         var shape = evt.targetNode.getParent();
         shape.remove();
         layer.draw();
-});
-
-  
+}); 
 }
