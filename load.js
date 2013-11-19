@@ -352,7 +352,7 @@ layer.on('dblclick', function(evt) {
         shape.remove();
         layer.draw();
 }); 
-layer.on('taphold', function(evt) {
+layer.on('dbltap', function(evt) {
         var shape = evt.targetNode.getParent();
         shape.remove();
         layer.draw();
