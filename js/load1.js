@@ -6,6 +6,7 @@ var stage = new Kinetic.Stage({
     width: window.innerWidth,
     height: window.innerHeight
 });
+
 var layer = new Kinetic.Layer();
 stage.add(layer);
 
@@ -15,7 +16,9 @@ function draw(image,drag,id,name){
 	if(typeof name == 'undefined') name = '';
 	var img = new Kinetic.Image({
 		image: image,
-		draggable: drag,
+        draggable: drag,
+		width: document.getElementById("container").offsetWidth,
+		height: document.getElementById("container").offsetHeight,
 		id: id,
 		name: name
 	});
@@ -24,6 +27,16 @@ function draw(image,drag,id,name){
 
 	return img;
 }
+
+
+    var image2 = new Kinetic.Image({
+        x: 0,
+        y: 0,
+        width: 300,
+        height: 300
+     //   image: image,
+    });
+    layer.add(image2);
 
 var BackImg = null;
 var mainImage = new Image();
@@ -35,14 +48,21 @@ mainImage.src = "img/Background.svg";
 var mainImage2 = new Image();
 mainImage2.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';
 
-
-
+$(".background").click(function () {
+    var newImage = new Image();
+    newImage.src = 'img/Backgrounds/' +$(this).attr('value');
+    layer.get('#mainImageId')[0].setImage(newImage);
+    layer.draw();
+});
+    
 $("#changebackground").click(function () {
 	layer.get('#mainImageId')[0].setImage(mainImage2);
 	//BackImg.moveToTop();
 	//BackImg.src = "img/pic/body01.svg";
 	layer.draw();
 });
+
+
 
 $("#addbutton").click(function () {
     // simple label
@@ -82,9 +102,9 @@ $("#body01").click(function () {
                                        y: 0,
                                        draggable: true
                                        });
+        
             imageGroup.add(image2);
-            //imageGroup.on('mouseout', deleteImg(this));
-            // add the layer to the stage
+                 // add the layer to the stage
             layer.add(imageGroup);
             addAnchors(image2, imageGroup);
             layer.draw();
@@ -110,9 +130,10 @@ $("#body02").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
-    
+        
             // add the layer to the stage
             layer.add(imageGroup);
+            
             addAnchors(image2, imageGroup);
             layer.draw();
 }
@@ -137,9 +158,9 @@ $("#hand01").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
-    
             // add the layer to the stage
             layer.add(imageGroup);
+            
             addAnchors(image2, imageGroup);
             layer.draw();
 }
@@ -167,6 +188,7 @@ $("#hand02").click(function () {
     
             // add the layer to the stage
             layer.add(imageGroup);
+            
             addAnchors(image2, imageGroup);
             layer.draw();
 }
@@ -194,6 +216,7 @@ $("#headA01").click(function () {
     
             // add the layer to the stage
             layer.add(imageGroup);
+            
             addAnchors(image2, imageGroup);
             layer.draw();
 }
@@ -218,9 +241,10 @@ $("#headA02").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
-    
+
             // add the layer to the stage
             layer.add(imageGroup);
+            
             addAnchors(image2, imageGroup);
             layer.draw();
 }
@@ -247,12 +271,13 @@ $("#headB01").click(function () {
     
             // add the layer to the stage
             layer.add(imageGroup);
+            
             addAnchors(image2, imageGroup);
             layer.draw();
 }
 image.src = "img/pic/headB01.svg";
 });
-
+//a
 $("#headB02").click(function () {
 
         var image = new Image();
@@ -271,9 +296,9 @@ $("#headB02").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
-    
             // add the layer to the stage
             layer.add(imageGroup);
+            
             addAnchors(image2, imageGroup);
             layer.draw();
 }
@@ -298,28 +323,40 @@ $("#prop01").click(function () {
                                        draggable: true
                                        });
             imageGroup.add(image2);
-    
             // add the layer to the stage
             layer.add(imageGroup);
+            
             addAnchors(image2, imageGroup);
             layer.draw();
 }
 image.src = "img/pic/prop01.svg";
 });
 
+var tooltip = new Opentip(
+        "div#container", //target element 
+        "Double click to delete", // title
+        {
+            showOn: null // I'll manually manage the showOn effect
+        });
+layer.on("mouseover", function(evt) {
+    var shape = evt.targetNode;
+    if(shape.getName()=="image")
+    tooltip.show();
+});
+layer.on("mouseout", function(evt) {
+    var shape = evt.targetNode;
+    tooltip.hide();
+});
 
 layer.on('dblclick', function(evt) {
-        var shape = evt.targetNode
+        var shape = evt.targetNode.getParent();
         shape.remove();
         layer.draw();
-});
-
+}); 
 
 layer.on('taphold', function(evt) {
-        var shape = evt.targetNode
+        var shape = evt.targetNode.getParent();
         shape.remove();
         layer.draw();
-});
-
-
+}); 
 }
