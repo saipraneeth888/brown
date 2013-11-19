@@ -336,9 +336,14 @@ var tooltip = new Opentip(
         "div#container", //target element 
         "Double click to delete", // title
         {
-            showOn: null, // I'll manually manage the showOn effect
+            showOn: null // I'll manually manage the showOn effect
         });
 layer.on("mouseover", function(evt) {
+    var shape = evt.targetNode;
+    if(shape.getName()=="image")
+    tooltip.show();
+});
+layer.on("tap", function(evt) {
     var shape = evt.targetNode;
     if(shape.getName()=="image")
     tooltip.show();
