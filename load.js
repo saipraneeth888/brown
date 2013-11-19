@@ -333,11 +333,20 @@ image.src = "img/pic/prop01.svg";
 });
 
 var tooltip = new Opentip(
-        "div#container", //target element 
-        "Double click to delete", // title
-        {
-            showOn: null // I'll manually manage the showOn effect
-        });
+    "div#container", //target element 
+    "Double click to delete", // title
+    {
+        showOn: null // I'll manually manage the showOn effect
+    }
+);
+var tooltip2 = new Opentip(
+    "div#container", //target element 
+    "Double tap to delete", // title
+    {
+        showOn: null // I'll manually manage the showOn effect
+    }
+);
+        
 layer.on("mouseover", function(evt) {
     var shape = evt.targetNode;
     if(shape.getName()=="image")
@@ -346,7 +355,7 @@ layer.on("mouseover", function(evt) {
 layer.on("touchstart", function(evt) {
     var shape = evt.targetNode;
     if(shape.getName()=="image")
-    tooltip.show();
+    tooltip2.show();
 });
 
 layer.on("mouseout", function(evt) {
@@ -355,17 +364,22 @@ layer.on("mouseout", function(evt) {
 });
 layer.on("touchend", function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image")
-    tooltip.hide();
+    tooltip2.hide();
 });
 layer.on('dblclick', function(evt) {
-        var shape = evt.targetNode.getParent();
-        shape.remove();
-        layer.draw();
+    var shape = evt.targetNode;
+    if(shape.getName()=="image"){
+        var group = shape.getParent();
+        group.remove();
+        layer.draw();  
+    }
 }); 
 layer.on('dbltap', function(evt) {
-        var shape = evt.targetNode.getParent();
-        shape.remove();
-        layer.draw();
+    var shape = evt.targetNode;
+    if(shape.getName()=="image"){
+        var group = shape.getParent();
+        group.remove();
+        layer.draw();  
+    }
 }); 
 }
