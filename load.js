@@ -343,13 +343,19 @@ layer.on("mouseover", function(evt) {
     if(shape.getName()=="image")
     tooltip.show();
 });
-layer.on("tap", function(evt) {
+layer.on("touchstart", function(evt) {
     var shape = evt.targetNode;
     if(shape.getName()=="image")
     tooltip.show();
 });
+
 layer.on("mouseout", function(evt) {
     var shape = evt.targetNode;
+    tooltip.hide();
+});
+layer.on("touchend", function(evt) {
+    var shape = evt.targetNode;
+    if(shape.getName()=="image")
     tooltip.hide();
 });
 layer.on('dblclick', function(evt) {
