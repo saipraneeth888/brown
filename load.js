@@ -7,6 +7,21 @@ var stage = new Kinetic.Stage({
     height: window.innerHeight
 });
 
+var tooltip = new Opentip(
+    "div#container", //target element 
+    "Double click to delete", // title
+    {
+        showOn: null // I'll manually manage the showOn effect
+    }
+);
+var tooltip2 = new Opentip(
+    "div#container", //target element 
+    "Double tap to delete", // title
+    {
+        showOn: null // I'll manually manage the showOn effect
+    }
+);
+
 var layer = new Kinetic.Layer();
 stage.add(layer);
 
@@ -331,24 +346,10 @@ $("#prop01").click(function () {
 }
 image.src = "img/pic/prop01.svg";
 });
-
-var tooltip = new Opentip(
-    "div#container", //target element 
-    "Double click to delete", // title
-    {
-        showOn: null // I'll manually manage the showOn effect
-    }
-);
-var tooltip2 = new Opentip(
-    "div#container", //target element 
-    "Double tap to delete", // title
-    {
-        showOn: null // I'll manually manage the showOn effect
-    }
-);
         
 layer.on("mouseover", function(evt) {
     var shape = evt.targetNode;
+    alert("this is " + shape.getName());
     if(shape.getName()=="image")
     tooltip.show();
 });
@@ -358,6 +359,7 @@ layer.on("touchstart", function(evt) {
     tooltip2.show();
 });
 
+
 layer.on("mouseout", function(evt) {
     var shape = evt.targetNode;
     tooltip.hide();
@@ -366,6 +368,8 @@ layer.on("touchend", function(evt) {
     var shape = evt.targetNode;
     tooltip2.hide();
 });
+
+
 layer.on('dblclick', function(evt) {
     var shape = evt.targetNode;
     if(shape.getName()=="image"){
