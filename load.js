@@ -349,13 +349,12 @@ image.src = "img/pic/prop01.svg";
         
 layer.on("mouseover", function(evt) {
     var shape = evt.targetNode;
-    alert("this is " + shape.getName());
-    if(shape.getName()=="image")
+    if(shape.getName()=="image" || shape.getName() == "undefined")
     tooltip.show();
 });
 layer.on("touchstart", function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image")
+    if(shape.getName()=="image" || shape.getName() == "undefined")
     tooltip2.show();
 });
 
@@ -372,7 +371,7 @@ layer.on("touchend", function(evt) {
 
 layer.on('dblclick', function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image"){
+    if(shape.getName()=="image" || shape.getName() == "undefined"){
         var group = shape.getParent();
         group.remove();
         layer.draw();  
@@ -380,7 +379,7 @@ layer.on('dblclick', function(evt) {
 }); 
 layer.on('dbltap', function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image"){
+    if(shape.getName()=="image" || shape.getName() == "undefined"){
         var group = shape.getParent();
         group.remove();
         layer.draw();  
