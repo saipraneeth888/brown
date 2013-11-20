@@ -394,8 +394,15 @@ document.getElementById('save').addEventListener('click', function() {
          * since the stage toDataURL() method is asynchronous, we need
          * to provide a callback
          */
-         var json = stage.toJSON();
-        console.log(json);
+         var canvasjson = stage.toJSON();
+            console.log(json);
+            alert(json);
+           $.ajax({
+            url:'share.php',
+            data = 'canvasjson',
+            type: "POST",
+            dataType:'json',
+           }); 
         // stage.toDataURL({
         //   callback: function(dataUrl) {
             
