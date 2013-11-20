@@ -96,6 +96,7 @@ $("#addbutton").click(function () {
         fontFamily: 'Verdana',
         fontSize: 18,
         padding: 10,
+        name: "caption",
         fill: 'white'
     }));
     layer.add(label);
@@ -351,12 +352,12 @@ image.src = "img/pic/prop01.svg";
         
 layer.on("mouseover", function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image" || shape.getName() == "undefined")
+    if(shape.getName()=="image" || shape.getName() == "caption")
     tooltip.show();
 });
 layer.on("touchstart", function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image" || shape.getName() == "undefined")
+    if(shape.getName()=="image" || shape.getName() == "caption")
     tooltip2.show();
 });
 
@@ -373,7 +374,7 @@ layer.on("touchend", function(evt) {
 
 layer.on('dblclick', function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image" || shape.getName() == "undefined"){
+    if(shape.getName()=="image" || shape.getName() == "caption"){
         var group = shape.getParent();
         group.remove();
         layer.draw();  
@@ -381,7 +382,7 @@ layer.on('dblclick', function(evt) {
 }); 
 layer.on('dbltap', function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image" || shape.getName() == "undefined"){
+    if(shape.getName()=="image" || shape.getName() == "caption"){
         var group = shape.getParent();
         group.remove();
         layer.draw();  
