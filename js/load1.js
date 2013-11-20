@@ -81,6 +81,7 @@ $("#changebackground").click(function () {
 
 
 
+
 $("#addbutton").click(function () {
     // simple label
     var label = new Kinetic.Label({
@@ -393,15 +394,17 @@ document.getElementById('save').addEventListener('click', function() {
          * since the stage toDataURL() method is asynchronous, we need
          * to provide a callback
          */
-        stage.toDataURL({
-          callback: function(dataUrl) {
-            /*
-             * here you can do anything you like with the data url.
-             * In this tutorial we'll just open the url with the browser
-             * so that you can see the result as an image
-             */
-            window.open(dataUrl);
-          }
-        });
+         var json = stage.toJSON();
+        console.log(json);
+        // stage.toDataURL({
+        //   callback: function(dataUrl) {
+            
+        //      * here you can do anything you like with the data url.
+        //      * In this tutorial we'll just open the url with the browser
+        //      * so that you can see the result as an image
+             
+        //     window.open(dataUrl);
+        //   }
+        // });
       }, false);
 }
