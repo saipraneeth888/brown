@@ -56,7 +56,7 @@ function draw(image,drag,id,name){
 var BackImg = null;
 var mainImage = new Image();
 mainImage.onload = function () {
-    draw(mainImage,true, 'mainImageId');
+    draw(mainImage,false, 'mainImageId');
 };
 mainImage.src = "img/Background.svg";
 
@@ -67,11 +67,13 @@ $(".background").click(function () {
     var newImage = new Image();
     newImage.src = 'img/Backgrounds/' +$(this).attr('value');
     layer.get('#mainImageId')[0].setImage(newImage);
+    layer.get('#mainImageId')[0].setDraggable(false);
     layer.draw();
 });
     
 $("#changebackground").click(function () {
 	layer.get('#mainImageId')[0].setImage(mainImage2);
+    layer.get('#mainImageId')[0].setDraggable(false);
 	//BackImg.moveToTop();
 	//BackImg.src = "img/pic/body01.svg";
 	layer.draw();
