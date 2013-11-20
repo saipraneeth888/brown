@@ -7,6 +7,21 @@ var stage = new Kinetic.Stage({
     height: window.innerHeight
 });
 
+var tooltip = new Opentip(
+    "div#container", //target element 
+    "Double click to delete", // title
+    {
+        showOn: null // I'll manually manage the showOn effect
+    }
+);
+var tooltip2 = new Opentip(
+    "div#container", //target element 
+    "Double tap to delete", // title
+    {
+        showOn: null // I'll manually manage the showOn effect
+    }
+);
+
 var layer = new Kinetic.Layer();
 stage.add(layer);
 
@@ -41,7 +56,7 @@ function draw(image,drag,id,name){
 var BackImg = null;
 var mainImage = new Image();
 mainImage.onload = function () {
-    draw(mainImage,true, 'mainImageId');
+    draw(mainImage,false, 'mainImageId');
 };
 mainImage.src = "img/Background.svg";
 
@@ -52,11 +67,13 @@ $(".background").click(function () {
     var newImage = new Image();
     newImage.src = 'img/Backgrounds/' +$(this).attr('value');
     layer.get('#mainImageId')[0].setImage(newImage);
+    layer.get('#mainImageId')[0].setDraggable(false);
     layer.draw();
 });
     
 $("#changebackground").click(function () {
 	layer.get('#mainImageId')[0].setImage(mainImage2);
+    layer.get('#mainImageId')[0].setDraggable(false);
 	//BackImg.moveToTop();
 	//BackImg.src = "img/pic/body01.svg";
 	layer.draw();
@@ -79,6 +96,7 @@ $("#addbutton").click(function () {
         fontFamily: 'Verdana',
         fontSize: 18,
         padding: 10,
+        name: "caption",
         fill: 'white'
     }));
     layer.add(label);
@@ -331,32 +349,59 @@ $("#prop01").click(function () {
 }
 image.src = "img/pic/prop01.svg";
 });
-
-var tooltip = new Opentip(
-        "div#container", //target element 
-        "Double click to delete", // title
-        {
-            showOn: null // I'll manually manage the showOn effect
-        });
+        
 layer.on("mouseover", function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image")
+    if(shape.getName()=="image" || shape.getName() == "caption")
     tooltip.show();
 });
+layer.on("touchstart", function(evt) {
+    var shape = evt.targetNode;
+    if(shape.getName()=="image" || shape.getName() == "caption")
+    tooltip2.show();
+});
+
+
 layer.on("mouseout", function(evt) {
     var shape = evt.targetNode;
     tooltip.hide();
 });
+layer.on("touchend", function(evt) {
+    var shape = evt.targetNode;
+    tooltip2.hide();
+});
+
 
 layer.on('dblclick', function(evt) {
-        var shape = evt.targetNode.getParent();
-        shape.remove();
-        layer.draw();
+    var shape = evt.targetNode;
+    if(shape.getName()=="image" || shape.getName() == "caption"){
+        var group = shape.getParent();
+        group.remove();
+        layer.draw();  
+    }
 }); 
-
-layer.on('taphold', function(evt) {
-        var shape = evt.targetNode.getParent();
-        shape.remove();
-        layer.draw();
-}); 
+layer.on('dbltap', function(evt) {
+    var shape = evt.targetNode;
+    if(shape.getName()=="image" || shape.getName() == "caption"){
+        var group = shape.getParent();
+        group.remove();
+        layer.draw();  
+    }
+});
+document.getElementById('save').addEventListener('click', function() {
+        /*
+         * since the stage toDataURL() method is asynchronous, we need
+         * to provide a callback
+         */
+        stage.toDataURL({
+          callback: function(dataUrl) {
+            /*
+             * here you can do anything you like with the data url.
+             * In this tutorial we'll just open the url with the browser
+             * so that you can see the result as an image
+             */
+            window.open(dataUrl);
+          }
+        });
+      }, false);
 }
