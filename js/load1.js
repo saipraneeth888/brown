@@ -399,7 +399,7 @@ document.getElementById('save').addEventListener('click', function() {
             alert(json);
            $.ajax({
             url:'share.php',
-            data = 'canvasjson',
+            data = canvasjson,
             type: "POST",
             dataType:'json',
            }); 
