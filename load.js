@@ -70,15 +70,6 @@ $(".background").click(function () {
     layer.get('#mainImageId')[0].setDraggable(false);
     layer.draw();
 });
-    
-$("#changebackground").click(function () {
-	layer.get('#mainImageId')[0].setImage(mainImage2);
-    layer.get('#mainImageId')[0].setDraggable(false);
-	//BackImg.moveToTop();
-	//BackImg.src = "img/pic/body01.svg";
-	layer.draw();
-});
-
 
 
 $("#addbutton").click(function () {
