@@ -402,8 +402,8 @@ document.getElementById('save').addEventListener('click', function() {
                 }).done(function(o) {
                 console.log('saved');
                         }).done(function( data ) {
-                                //alert('HI! ' + data);
-				window.location.herf = "http://story-boarder.herokuapp.com/Test/" + data;
+                                alert('HI! ' + data);
+				window.location.herf = "http://www.google.com";
                                 });
           }
         });
