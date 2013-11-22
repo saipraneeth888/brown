@@ -1,0 +1,130 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.2.min.js"></script>
+  <!-- <script src="index.js" type="text/javascript" defer="defer"></script>
+  -->
+  <script src="opentip-jquery.js"></script><!-- Change to the adapter you actually use -->
+<link href="opentip.css" rel="stylesheet" type="text/css" />
+  <script src="js/load1.js"></script>
+  <script src="canvas.js"></script>
+
+  <style>
+	#container {
+	  border:solid 1px #ccc;
+	  margin-top: 10px;
+	  
+	  height:500px;
+	  
+	  background-color:lightblue;
+	}
+        .thumbnail .con {
+            width:171px;
+            height:180px;
+        }
+  </style>
+</head> 
+
+<body> 
+    
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>Canvas</h1>
+  </div>
+    
+  <div data-role="content">
+  <div id="container"></div>
+  <br><br>
+<input id="newtext" type="text" value="Hello!">
+<button id="save">
+  Save as image
+</button>
+<a href id="addbutton" data-role="button" data-inline="true" data-mini="true">Add this text</a>
+  
+  <a href="#popupBackground" data-rel="popup" data-role="button" data-inline="true" data-mini="true" data-theme="b" data-transition="pop">Choose a Background</a>
+  <div data-role="popup" id="popupBackground" data-theme="none">
+    <div data-role="collapsible-set" data-theme="b" data-content-theme="c" data-collapsed-icon="arrow-r"data-expanded-icon="arrow-d" style="margin:10; width:250px;">
+      <div data-role="collapsible" data-inset="false">
+        <h2>Background</h2>
+          <ul data-role="listview">
+              <?php include('loadBackground.php'); ?>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+  <a id="changebackground" data-role="button" data-inline="true" data-mini="true">Change Background</a> 
+  <a href="#pagetwo" data-role="button" data-inline="true" data-mini="true">Images</a>
+
+  </div>
+  </div>
+ 
+  <div data-role="footer">
+    <h1>Footer Text</h1>
+  </div>
+
+<div data-role="page" id="pagetwo">
+  <div data-role="header">
+    <h1>Pictures</h1>
+  </div>
+  <div data-role="content">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+    <a href="#" data-role="button" data-inline="true" data-mini="true" data-rel="back">Go Back</a>
+    <div class="row">
+            <div class="col-sm-6 col-md-3">
+              <a href="#pageone" id="body01" class="thumbnail">
+                <img class="img-rounded img-responsive con" src="img/pic/body01.svg" alt="...">
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <a href="#pageone" id="body02" class="thumbnail">
+                <img class="img-rounded img-responsive con" src="img/pic/body02.svg" alt="...">
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <a href="#pageone" id="hand01" class="thumbnail">
+                <img class="img-rounded img-responsive con" src="img/pic/hand01.svg" alt="...">
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <a href="#pageone" id="hand02" class="thumbnail">
+                <img class="img-rounded img-responsive con" src="img/pic/hand02.svg" alt="...">
+              </a>
+            </div>
+            
+            <div class="col-sm-6 col-md-3">
+              <a href="#pageone" id="headA01" class="thumbnail">
+                <img class="img-rounded img-responsive con" src="img/pic/headA01.svg" alt="...">
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <a href="#pageone" id="headA02" class="thumbnail">
+                <img class="img-rounded img-responsive con" src="img/pic/headA02.svg" alt="...">
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <a href="#pageone" id="headB01" class="thumbnail">
+                <img class="img-rounded img-responsive con" src="img/pic/headB01.svg" alt="...">
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <a href="#pageone" id="headB02" class="thumbnail">
+                <img class="img-rounded img-responsive con" src="img/pic/headB02.svg" alt="...">
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <a href="#pageone" id="prop01" class="thumbnail">
+                <img class="img-rounded img-responsive con" src="img/pic/prop01.svg" alt="...">
+              </a>
+            </div>
+        </div>
+  </div>
+</div>
+
+</body>
+</html>

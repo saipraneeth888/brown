@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.7.4.min.js"></script>
+    <script defer="defer">
+      var json = '{"attrs":{"width":1366,"height":422},"className":"Stage","children":[{"attrs":{},"className":"Layer","children":[{"attrs":{"x":0,"y":0,"width":300,"height":300},"className":"Image"},{"attrs":{"draggable":false,"width":1319,"height":500,"id":"mainImageId","name":""},"className":"Image"},{"attrs":{"x":268,"y":188,"draggable":true,"rotation":0,"scaleX":1,"scaleY":1,"offsetX":0,"offsetY":0,"skewX":0,"skewY":0},"className":"Group","children":[{"attrs":{"x":0,"y":0,"width":150,"height":150,"name":"image"},"className":"Image"},{"attrs":{"x":0,"y":0,"radius":50,"angle":1.5707963267948966,"rotation":0,"name":"topleft","draggable":true,"dragOnTop":false},"className":"Wedge"},{"attrs":{"x":150,"y":0,"radius":50,"angle":1.5707963267948966,"rotation":1.5707963267948966,"name":"topright","draggable":true,"dragOnTop":false},"className":"Wedge"},{"attrs":{"x":0,"y":150,"radius":50,"angle":1.5707963267948966,"rotation":-1.5707963267948966,"name":"botleft","draggable":true,"dragOnTop":false},"className":"Wedge"},{"attrs":{"x":150,"y":150,"radius":50,"angle":1.5707963267948966,"rotation":3.141592653589793,"name":"botright","draggable":true,"dragOnTop":false},"className":"Wedge"}]},{"attrs":{"x":607,"y":170,"draggable":true,"rotation":0,"scaleX":1,"scaleY":1,"offsetX":0,"offsetY":0,"skewX":0,"skewY":0},"className":"Group","children":[{"attrs":{"x":0,"y":0,"width":150,"height":150,"name":"image"},"className":"Image"},{"attrs":{"x":0,"y":0,"radius":50,"angle":1.5707963267948966,"rotation":0,"name":"topleft","draggable":true,"dragOnTop":false},"className":"Wedge"},{"attrs":{"x":150,"y":0,"radius":50,"angle":1.5707963267948966,"rotation":1.5707963267948966,"name":"topright","draggable":true,"dragOnTop":false},"className":"Wedge"},{"attrs":{"x":0,"y":150,"radius":50,"angle":1.5707963267948966,"rotation":-1.5707963267948966,"name":"botleft","draggable":true,"dragOnTop":false},"className":"Wedge"},{"attrs":{"x":150,"y":150,"radius":50,"angle":1.5707963267948966,"rotation":3.141592653589793,"name":"botright","draggable":true,"dragOnTop":false},"className":"Wedge"}]}]}]}';
+
+      // create node using json string
+      var stage = Kinetic.Node.create(json, 'container');
+    </script>
+  </body>
+</html>

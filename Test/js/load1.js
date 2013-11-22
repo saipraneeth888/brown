@@ -81,6 +81,7 @@ $("#changebackground").click(function () {
 
 
 
+
 $("#addbutton").click(function () {
     // simple label
     var label = new Kinetic.Label({
@@ -389,23 +390,28 @@ layer.on('dbltap', function(evt) {
     }
 });
 document.getElementById('save').addEventListener('click', function() {
-        stage.toDataURL({
-          callback: function(dataUrl) {
-            //window.open(dataUrl);
-            //alert(dataUrl+"clicked");
-            $.ajax({
-                type: "POST",
-                url: "save.php",
-                data: { 
-                   imgBase64: dataUrl
-                }
-                }).done(function(o) {
-                console.log('saved');
-                        }).done(function( data ) {
-                                alert('HI!');
-				//window.location.herf = "http://story-boarder.herokuapp.com/" + data;
-                                });
-          }
-        });
-    }, false);
+        /*
+         * since the stage toDataURL() method is asynchronous, we need
+         * to provide a callback
+         */
+         var canvasjson = stage.toJSON();
+            console.log(json);
+            alert(json);
+           $.ajax({
+            url:'share.php',
+            data = canvasjson,
+            type: "POST",
+            dataType:'json',
+           }); 
+        // stage.toDataURL({
+        //   callback: function(dataUrl) {
+            
+        //      * here you can do anything you like with the data url.
+        //      * In this tutorial we'll just open the url with the browser
+        //      * so that you can see the result as an image
+             
+        //     window.open(dataUrl);
+        //   }
+        // });
+      }, false);
 }
