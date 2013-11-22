@@ -3,6 +3,7 @@
 <head> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
@@ -15,13 +16,38 @@
   <script src="canvas.js"></script>
 
   <style>
-	#container {
+	.containerDiv {
 	  border:solid 1px #ccc;
 	  margin-top: 10px;
 	  
 	  height:500px;
 	  
 	  background-color:lightblue;
+	}
+        .container{
+            width: 100%;
+        }
+        .center{
+            height: 500px;
+            position: relative;
+        }
+        .centerInner{
+            width: 100%;
+            text-align: center;
+            position:absolute; 
+            top:40%; 
+            height:10em; 
+        }
+        .arrow{
+            width: 8em;
+            height: 8em;
+        }
+        .containerHide {
+	  border:solid 1px #ccc;
+	  margin-top: 10px;
+	  height:500px;
+	  background-color:lightblue;
+          display: none;
 	}
         .thumbnail .con {
             width:171px;
@@ -32,18 +58,25 @@
 
 <body> 
     
-<div data-role="page" id="pageone">
+<div data-role="page">
   <div data-role="header">
     <h1>Canvas</h1>
   </div>
     
   <div data-role="content">
-  <div id="container"></div>
+     <div class="container">
+        <div class="row">
+          <div class="col-md-1 col-xs-2 center"><div class="centerInner"><a href="#"><img class="arrow" src="img/Backward.png"/></a></div></div>
+          <div class="col-md-10 col-xs-14 containerDiv" id="container"></div>
+          <div class="col-md-10 col-xs-14 containerHide" id="container2"></div>
+          <div class="col-md-10 col-xs-14 containerHide" id="container3"></div>
+          <div class="col-md-1 col-xs-2 center"><div class="centerInner"><a href="#"><img class="arrow" src="img/Forward.png"/></a></div></div>
+       </div>
+     </div>
+      
   <br><br>
 <input id="newtext" type="text" value="Hello!">
-<button id="save">
-  Save as image
-</button>
+<a id="save" data-role="button" data-inline="true" data-mini="true">Save as image</a>
 <a href id="addbutton" data-role="button" data-inline="true" data-mini="true">Add this text</a>
   
   <a href="#popupBackground" data-rel="popup" data-role="button" data-inline="true" data-mini="true" data-theme="b" data-transition="pop">Choose a Background</a>
@@ -57,8 +90,6 @@
       </div>
     </div>
   </div>
-
-  <a id="changebackground" data-role="button" data-inline="true" data-mini="true">Change Background</a> 
   <a href="#pagetwo" data-role="button" data-inline="true" data-mini="true">Images</a>
 
   </div>
@@ -73,7 +104,6 @@
     <h1>Pictures</h1>
   </div>
   <div data-role="content">
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
     <a href="#" data-role="button" data-inline="true" data-mini="true" data-rel="back">Go Back</a>
     <div class="row">
             <div class="col-sm-6 col-md-3">
