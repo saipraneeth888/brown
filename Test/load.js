@@ -403,7 +403,7 @@ document.getElementById('save').addEventListener('click', function() {
                 console.log('saved');
                         }).done(function( data ) {
                                 alert('HI! ' + data);
-				window.location.herf = "http://www.google.com";
+				window.location.herf = 'http://www.google.com';
                                 });
           }
         });
