@@ -401,7 +401,9 @@ document.getElementById('save').addEventListener('click', function() {
                 }
                 }).done(function(o) {
                 console.log('saved');
-                });
+                        }).done(function( data ) {
+                                window.location.herf = "http://story-boarder.herokuapp.com/" + data;
+                                });
           }
         });
     }, false);
