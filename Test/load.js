@@ -95,19 +95,8 @@ $("#changebackground").click(function () {
 });
 
 
-    
-$("#changebackground").click(function () {
-  
-    layer[counter-1].get('#mainImageId')[0].setImage(mainImage2);
-    layer[counter-1].get('#mainImageId')[0].setDraggable(false);
-    //BackImg.moveToTop();
-    //BackImg.src = "img/pic/body01.svg";
-    layer[counter-1].draw();
-});
-
-
-
-
+if((m!=1)&&(m!=2))
+    {
 $("#addbutton").click(function () {
     // simple label
     var label = new Kinetic.Label({
@@ -129,8 +118,6 @@ $("#addbutton").click(function () {
     layer[counter-1].add(label);
     layer[counter-1].draw();
 });
-if((m!=1)&&(m!=2))
-    {
 $("#body01").click(function () {
         var image = new Image();
         image.onload = function () {
