@@ -41,20 +41,20 @@ stage[m].add(layer[m]);
 
 //Redefining the draw function
 function draw(image,drag,id,name){
-	if(typeof id == 'undefined') id = '';
-	if(typeof name == 'undefined') name = '';
-	var img = new Kinetic.Image({
-		image: image,
+    if(typeof id == 'undefined') id = '';
+    if(typeof name == 'undefined') name = '';
+    var img = new Kinetic.Image({
+        image: image,
         draggable: drag,
-		width: document.getElementById(c).offsetWidth,
-		height: document.getElementById(c).offsetHeight,
-		id: id,
-		name: name
-	});
-	layer[m].add(img);
-	layer[m].draw();
+        width: document.getElementById(c).offsetWidth,
+        height: document.getElementById(c).offsetHeight,
+        id: id,
+        name: name
+    });
+    layer[m].add(img);
+    layer[m].draw();
 
-	return img;
+    return img;
 }
 
 
@@ -97,11 +97,11 @@ $("#changebackground").click(function () {
     
 $("#changebackground").click(function () {
   
-	layer[counter-1].get('#mainImageId')[0].setImage(mainImage2);
+    layer[counter-1].get('#mainImageId')[0].setImage(mainImage2);
     layer[counter-1].get('#mainImageId')[0].setDraggable(false);
-	//BackImg.moveToTop();
-	//BackImg.src = "img/pic/body01.svg";
-	layer[counter-1].draw();
+    //BackImg.moveToTop();
+    //BackImg.src = "img/pic/body01.svg";
+    layer[counter-1].draw();
 });
 
 
@@ -379,30 +379,30 @@ $("#prop01").click(function () {
 }
 image.src = "img/pic/prop01.svg";
 });
-    }       
-layer[counter-1].on("mouseover", function(evt) {
+    }    
+layer[m].on("mouseover", function(evt) {
     var shape = evt.targetNode;
     if(shape.getName()=="image" || shape.getName() == "caption")
     tooltip.show();
 });
-layer[counter-1].on("touchstart", function(evt) {
+layer[m].on("touchstart", function(evt) {
     var shape = evt.targetNode;
     if(shape.getName()=="image" || shape.getName() == "caption")
     tooltip2.show();
 });
 
 
-layer[counter-1].on("mouseout", function(evt) {
+layer[m].on("mouseout", function(evt) {
     var shape = evt.targetNode;
     tooltip.hide();
 });
-layer[counter-1].on("touchend", function(evt) {
+layer[m].on("touchend", function(evt) {
     var shape = evt.targetNode;
     tooltip2.hide();
 });
 
 
-layer[counter-1].on('dblclick', function(evt) {
+layer[m].on('dblclick', function(evt) {
     var shape = evt.targetNode;
     if(shape.getName()=="image" || shape.getName() == "caption"){
         var group = shape.getParent();
@@ -410,7 +410,7 @@ layer[counter-1].on('dblclick', function(evt) {
         layer[counter-1].draw();  
     }
 }); 
-layer[counter-1].on('dbltap', function(evt) {
+layer[m].on('dbltap', function(evt) {
     var shape = evt.targetNode;
     if(shape.getName()=="image" || shape.getName() == "caption"){
         var group = shape.getParent();
@@ -419,7 +419,7 @@ layer[counter-1].on('dbltap', function(evt) {
     }
 });
 document.getElementById('save').addEventListener('click', function() {
-        stage.toDataURL({
+        stage[m].toDataURL({
           callback: function(dataUrl) {
             //window.open(dataUrl);
             //alert(dataUrl+"clicked");
