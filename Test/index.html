@@ -14,16 +14,16 @@
 <link href="opentip.css" rel="stylesheet" type="text/css" />
   <script src="load.js"></script>
   <script src="canvas.js"></script>
-
+  <script src="addslide.js"></script>
   <style>
-	.containerDiv {
-	  border:solid 1px #ccc;
-	  margin-top: 10px;
-	  
-	  height:500px;
-	  
-	  background-color:lightblue;
-	}
+    .containerDiv {
+    border:solid 1px #ccc;
+    margin-top: 10px;
+    
+    height:500px;
+    
+    background-color:lightblue;
+  }
         .container{
             width: 100%;
         }
@@ -43,12 +43,12 @@
             height: 8em;
         }
         .containerHide {
-	  border:solid 1px #ccc;
-	  margin-top: 10px;
-	  height:500px;
-	  background-color:lightblue;
+    border:solid 1px #ccc;
+    margin-top: 10px;
+    height:500px;
+    background-color:lightblue;
           display: none;
-	}
+  }
         .thumbnail .con {
             width:171px;
             height:180px;
@@ -58,25 +58,33 @@
 
 <body> 
     
-<div data-role="page">
+<div data-role="page" id="pageone">
   <div data-role="header">
     <h1>Canvas</h1>
   </div>
-    
-  <div data-role="content">
-     <div class="container">
+    <div data-role="content">
+       <div class="container">
         <div class="row">
-          <div class="col-md-1 col-xs-2 center"><div class="centerInner"><a href="#"><img class="arrow" src="img/Backward.png"/></a></div></div>
+          <div class="col-md-1 col-xs-2 center"><div class="centerInner"><a href id="addslide2" onclick="addslide(2);" style="display:none;"><img class="arrow" src="Test/img/Backward.png"/></a>
+          <a href id="addslide4" onclick="addslide(4);" style="display:none;"><img class="arrow" src="Test/img/Backward.png"/></a>
+          </div></div>
           <div class="col-md-10 col-xs-14 containerDiv" id="container"></div>
+          <div class="col-md-10 col-xs-14 containerHide" id="container1"></div>
           <div class="col-md-10 col-xs-14 containerHide" id="container2"></div>
-          <div class="col-md-10 col-xs-14 containerHide" id="container3"></div>
-          <div class="col-md-1 col-xs-2 center"><div class="centerInner"><a href="#"><img class="arrow" src="img/Forward.png"/></a></div></div>
+          <div class="col-md-1 col-xs-2 center"><div class="centerInner"><a href id="addslide1" onclick="addslide(1);"><img class="arrow" src="Test/img/Forward.png"/></a>
+          <a href id="addslide3" onclick="addslide(3);" style="display:none"><img class="arrow" src="Test/img/Forward.png"/></a>
+          </div></div>
        </div>
-     </div>
-      
+     </div
   <br><br>
+   <a href id="addslide1" data-role="button" data-inline="true" data-mini="true" onclick="addslide(1);" >Add slide1</a>
+    <a href id="addslide2" data-role="button" data-inline="true" data-mini="true" onclick="addslide(2);" style="display:none;" >Add slide2</a>
+     <a href id="addslide3" data-role="button" data-inline="true" data-mini="true" onclick="addslide(3);" style="display:none; ">Add slide3</a>
+      <a href id="addslide4" data-role="button" data-inline="true" data-mini="true" onclick="addslide(4);" style="display:none; ">Add slide4</a>
 <input id="newtext" type="text" value="Hello!">
-<a id="save" data-role="button" data-inline="true" data-mini="true">Save as image</a>
+<button id="save">
+  Save as image
+</button>
 <a href id="addbutton" data-role="button" data-inline="true" data-mini="true">Add this text</a>
   
   <a href="#popupBackground" data-rel="popup" data-role="button" data-inline="true" data-mini="true" data-theme="b" data-transition="pop">Choose a Background</a>
@@ -90,8 +98,10 @@
       </div>
     </div>
   </div>
+
   <a href="#pagetwo" data-role="button" data-inline="true" data-mini="true">Images</a>
 
+  <a href ="#pagetwo" data-role="button" data-inline="true" data-mini="true">Images</a>
   </div>
   </div>
  
@@ -104,6 +114,7 @@
     <h1>Pictures</h1>
   </div>
   <div data-role="content">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
     <a href="#" data-role="button" data-inline="true" data-mini="true" data-rel="back">Go Back</a>
     <div class="row">
             <div class="col-sm-6 col-md-3">
