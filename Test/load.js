@@ -84,16 +84,6 @@ $(".background").click(function () {
     layer[m].get('#mainImageId')[0].setDraggable(false);
     layer[m].draw();
 });
-    
-$("#changebackground").click(function () {
-  
-    layer[counter-1].get('#mainImageId')[0].setImage(mainImage2);
-    layer[counter-1].get('#mainImageId')[0].setDraggable(false);
-    //BackImg.moveToTop();
-    //BackImg.src = "img/pic/body01.svg";
-    layer[counter-1].draw();
-});
-
 
 if((m!=1)&&(m!=2))
     {
