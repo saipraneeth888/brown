@@ -380,30 +380,30 @@ $("#prop01").click(function () {
 }
 image.src = "img/pic/prop01.svg";
 });
-    }       
-layer[counter-1].on("mouseover", function(evt) {
+    }    
+layer[m].on("mouseover", function(evt) {
     var shape = evt.targetNode;
     if(shape.getName()=="image" || shape.getName() == "caption")
     tooltip.show();
 });
-layer[counter-1].on("touchstart", function(evt) {
+layer[m].on("touchstart", function(evt) {
     var shape = evt.targetNode;
     if(shape.getName()=="image" || shape.getName() == "caption")
     tooltip2.show();
 });
 
 
-layer[counter-1].on("mouseout", function(evt) {
+layer[m].on("mouseout", function(evt) {
     var shape = evt.targetNode;
     tooltip.hide();
 });
-layer[counter-1].on("touchend", function(evt) {
+layer[m].on("touchend", function(evt) {
     var shape = evt.targetNode;
     tooltip2.hide();
 });
 
 
-layer[counter-1].on('dblclick', function(evt) {
+layer[m].on('dblclick', function(evt) {
     var shape = evt.targetNode;
     if(shape.getName()=="image" || shape.getName() == "caption"){
         var group = shape.getParent();
@@ -411,7 +411,7 @@ layer[counter-1].on('dblclick', function(evt) {
         layer[counter-1].draw();  
     }
 }); 
-layer[counter-1].on('dbltap', function(evt) {
+layer[m].on('dbltap', function(evt) {
     var shape = evt.targetNode;
     if(shape.getName()=="image" || shape.getName() == "caption"){
         var group = shape.getParent();
@@ -420,7 +420,7 @@ layer[counter-1].on('dbltap', function(evt) {
     }
 });
 document.getElementById('save').addEventListener('click', function() {
-        stage.toDataURL({
+        stage[m].toDataURL({
           callback: function(dataUrl) {
             //window.open(dataUrl);
             //alert(dataUrl+"clicked");
