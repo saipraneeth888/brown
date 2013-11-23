@@ -41,20 +41,20 @@ stage[m].add(layer[m]);
 
 //Redefining the draw function
 function draw(image,drag,id,name){
-	if(typeof id == 'undefined') id = '';
-	if(typeof name == 'undefined') name = '';
-	var img = new Kinetic.Image({
-		image: image,
+    if(typeof id == 'undefined') id = '';
+    if(typeof name == 'undefined') name = '';
+    var img = new Kinetic.Image({
+        image: image,
         draggable: drag,
-		width: document.getElementById(c).offsetWidth,
-		height: document.getElementById(c).offsetHeight,
-		id: id,
-		name: name
-	});
-	layer[m].add(img);
-	layer[m].draw();
+        width: document.getElementById(c).offsetWidth,
+        height: document.getElementById(c).offsetHeight,
+        id: id,
+        name: name
+    });
+    layer[m].add(img);
+    layer[m].draw();
 
-	return img;
+    return img;
 }
 
 
@@ -87,12 +87,26 @@ $(".background").click(function () {
     
 $("#changebackground").click(function () {
   
-	layer[counter-1].get('#mainImageId')[0].setImage(mainImage2);
+    layer[counter-1].get('#mainImageId')[0].setImage(mainImage2);
     layer[counter-1].get('#mainImageId')[0].setDraggable(false);
-	//BackImg.moveToTop();
-	//BackImg.src = "img/pic/body01.svg";
-	layer[counter-1].draw();
+    //BackImg.moveToTop();
+    //BackImg.src = "img/pic/body01.svg";
+    layer[counter-1].draw();
 });
+
+
+    
+$("#changebackground").click(function () {
+  
+    layer[counter-1].get('#mainImageId')[0].setImage(mainImage2);
+    layer[counter-1].get('#mainImageId')[0].setDraggable(false);
+    //BackImg.moveToTop();
+    //BackImg.src = "img/pic/body01.svg";
+    layer[counter-1].draw();
+});
+
+
+
 
 $("#addbutton").click(function () {
     // simple label
@@ -419,8 +433,8 @@ document.getElementById('save').addEventListener('click', function() {
                 }).done(function(o) {
                 console.log('saved');
                         }).done(function( data ) {
-                                window.location.href = 'http://story-boarder.herokuapp.com/' + data;
-                              });
+                                window.location.href = 'http://story-boarder.herokuapp.com/Test/' + data;
+                                });
           }
         });
     }, false);
