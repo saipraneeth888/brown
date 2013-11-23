@@ -82,8 +82,9 @@ if((m!=1)&&(m!=2))
 $(".background").click(function () {
     var newImage = new Image();
     newImage.src = 'img/Backgrounds/' +$(this).attr('value');
-    layer[counter-1].get('#mainImageId')[0].setImage(newImage);
-    layer[counter-1].get('#mainImageId')[0].setDraggable(false);
+  //  alert(layer[counter-1]);
+    layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(newImage);
+    //layer[counter-1].find('#mainImageId')[0].setDraggable(false);
     layer[counter-1].draw();
 });
 $("#addbutton").click(function () {
