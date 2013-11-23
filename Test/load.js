@@ -77,6 +77,8 @@ mainImage.src = "img/Background.svg";
 var mainImage2 = new Image();
 mainImage2.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';
 
+if((m!=1)&&(m!=2))
+    {
 $(".background").click(function () {
     var newImage = new Image();
     newImage.src = 'img/Backgrounds/' +$(this).attr('value');
@@ -84,9 +86,6 @@ $(".background").click(function () {
     layer[counter-1].get('#mainImageId')[0].setDraggable(false);
     layer[counter-1].draw();
 });
-
-if((m!=1)&&(m!=2))
-    {
 $("#addbutton").click(function () {
     // simple label
     var label = new Kinetic.Label({
