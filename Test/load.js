@@ -397,7 +397,7 @@ layer[m].on('dbltap', function(evt) {
     }
 });
 document.getElementById('save').addEventListener('click', function() {
-        stage[m].toDataURL({
+        stage[counter-1].toDataURL({
           callback: function(dataUrl) {
             //window.open(dataUrl);
             //alert(dataUrl+"clicked");
