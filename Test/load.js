@@ -80,9 +80,9 @@ mainImage2.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';
 $(".background").click(function () {
     var newImage = new Image();
     newImage.src = 'img/Backgrounds/' +$(this).attr('value');
-    layer[m].get('#mainImageId')[0].setImage(newImage);
-    layer[m].get('#mainImageId')[0].setDraggable(false);
-    layer[m].draw();
+    layer[counter-1].get('#mainImageId')[0].setImage(newImage);
+    layer[counter-1].get('#mainImageId')[0].setDraggable(false);
+    layer[counter-1].draw();
 });
 
 if((m!=1)&&(m!=2))
