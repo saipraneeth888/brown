@@ -53,6 +53,26 @@
             width:171px;
             height:180px;
         }
+  
+  .wrapper {
+      height: 600px;
+      width: 1400px;
+      overflow: hidden;
+      position: relative;
+  }
+  .first {
+      height: 600px;
+      width: 600px;
+      float: left;
+      background-color: pink;
+  }
+  .second{
+      margin-left: 20px;
+      width: 600px;
+      height: 600px;
+      float: left;
+      background-color: aqua;
+  }
   </style>
 </head> 
 
@@ -68,9 +88,11 @@
           <div class="col-md-1 col-xs-2 center"><div class="centerInner"><a href id="addslide2" onclick="addslide(2);" style="display:none;"><img class="arrow" src="img/Backward.png"/></a>
           <a href id="addslide4" onclick="addslide(4);" style="display:none;"><img class="arrow" src="img/Backward.png"/></a>
           </div></div>
-          <div class="col-md-10 col-xs-14 containerDiv" id="container"></div>
-          <div class="col-md-10 col-xs-14 containerHide" id="container1"></div>
-          <div class="col-md-10 col-xs-14 containerHide" id="container2"></div>
+          <div class="wrapper">
+            <span class="first"><div class="col-md-10 col-xs-14 containerDiv" id="container"></div></span>
+            <span class="second"><div class="col-md-10 col-xs-14 containerDiv" id="container1"></div></span>
+            <span><div class="col-md-10 col-xs-14 containerHide" id="container2"></div></span>
+          </div>
           <div class="col-md-1 col-xs-2 center"><div class="centerInner"><a href id="addslide1" onclick="addslide(1);"><img class="arrow" src="img/Forward.png"/></a>
           <a href id="addslide3" onclick="addslide(3);" style="display:none"><img class="arrow" src="img/Forward.png"/></a>
           </div></div>
@@ -78,9 +100,8 @@
      </div
   <br><br>
 <input id="newtext" type="text" value="Hello!">
-<button id="save">
-  Save as image
-</button>
+    <a href id="save" data-role="button" data-inline="true" data-mini="true">Save as Image</a>
+
 <a href id="addbutton" data-role="button" data-inline="true" data-mini="true">Add this text</a>
   
   <a href="#popupBackground" data-rel="popup" data-role="button" data-inline="true" data-mini="true" data-theme="b" data-transition="pop">Choose a Background</a>
