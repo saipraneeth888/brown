@@ -382,12 +382,12 @@ image.src = "img/pic/prop01.svg";
     }    
 layer[m].on("mouseover", function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image" || shape.getName() == "caption")
+    if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName()=="bound")
     tooltip.show();
 });
 layer[m].on("touchstart", function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image" || shape.getName() == "caption")
+    if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName()=="bound")
     tooltip2.show();
 });
 
@@ -404,7 +404,7 @@ layer[m].on("touchend", function(evt) {
 
 layer[m].on('dblclick', function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image" || shape.getName() == "caption"){
+    if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName()=="bound"){
         var group = shape.getParent();
         group.remove();
         layer[counter-1].draw();  
@@ -412,7 +412,7 @@ layer[m].on('dblclick', function(evt) {
 }); 
 layer[m].on('dbltap', function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image" || shape.getName() == "caption"){
+    if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName()=="bound"){
         var group = shape.getParent();
         group.remove();
         layer[counter-1].draw();  
