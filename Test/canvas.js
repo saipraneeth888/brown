@@ -4,6 +4,7 @@ function updateCorner(anchor) {
     var botleft = group.get('.botleft')[0];
     var topright = group.get('.topright')[0];
     var botright = group.get('.botright')[0];
+    var bound = group.get('.bound')[0];
     var anchorX = anchor.getX();
     var anchorY = anchor.getY();
     var img = group.get('.image')[0];
@@ -55,10 +56,12 @@ function updateCorner(anchor) {
             break;
     }
     img.setPosition(topleft.getPosition());
+    bound.setPosition(topleft.getPosition());
     var width = topright.getX()-topleft.getX();
     var height = botright.getY()-topleft.getY();
     if (width && height){
         img.setSize(width,height);
+        bound.setSize(width,height);
         topleft.setRadius(width/3);
         botleft.setRadius(width/3);
         topright.setRadius(width/3);
@@ -129,8 +132,8 @@ function addCornerAnchor(group,x,y,name)
       case 'topleft':
         anchor.setDragBoundFunc(function(pos) {
           var botright = group.get('.botright')[0];
-          var X = botright.getAbsolutePosition().x;
-          var Y = botright.getAbsolutePosition().y;
+          var X = botright.getAbsolutePosition().x-10;
+          var Y = botright.getAbsolutePosition().y-10;
           if (X >= pos.x) {
             X = pos.x;
           }
@@ -143,8 +146,8 @@ function addCornerAnchor(group,x,y,name)
       case 'botright':
       anchor.setDragBoundFunc(function(pos) {
           var topleft = group.get('.topleft')[0];
-          var X = topleft.getAbsolutePosition().x;
-          var Y = topleft.getAbsolutePosition().y;
+          var X = topleft.getAbsolutePosition().x+10;
+          var Y = topleft.getAbsolutePosition().y+10;
           if (X <= pos.x) {
             X = pos.x;
           }
@@ -157,8 +160,8 @@ function addCornerAnchor(group,x,y,name)
       case 'botleft':
       anchor.setDragBoundFunc(function(pos) {
           var topright = group.get('.topright')[0];
-          var X = topright.getAbsolutePosition().x;
-          var Y = topright.getAbsolutePosition().y;
+          var X = topright.getAbsolutePosition().x-10;
+          var Y = topright.getAbsolutePosition().y+10;
           if (X >= pos.x) {
             X = pos.x;
           }
@@ -171,8 +174,8 @@ function addCornerAnchor(group,x,y,name)
       case 'topright':
       anchor.setDragBoundFunc(function(pos) {
           var botleft = group.get('.botleft')[0];
-          var X = botleft.getAbsolutePosition().x;
-          var Y = botleft.getAbsolutePosition().y;
+          var X = botleft.getAbsolutePosition().x+10;
+          var Y = botleft.getAbsolutePosition().y-10;
           if (X <= pos.x) {
             X = pos.x;
           }
@@ -187,7 +190,28 @@ function addCornerAnchor(group,x,y,name)
     
 }
 
+function addImgBound(group, width, height, name)
+{
+    var bound = new Kinetic.Rect({
+                             x: 0,
+                             y: 0,
+                             width: width,
+                             height: height,
+                             name: name
+                             });
+    bound.on('mousedown touchstart',function() {
+             bound.setStroke('black');
+             });
+    bound.on('mouseup touchend',function() {setTimeout(function() {
+             var layer = group.getLayer();
+             bound.setStroke('none');
+             layer.batchDraw();}, 2000);
+             });
+    group.add(bound);
+}
+
 function addAnchors(kinImage, imgGroup) {
+    addImgBound(imgGroup, kinImage.getWidth(), kinImage.getHeight(),'bound');
     addCornerAnchor(imgGroup, 0,0, 'topleft');
     addCornerAnchor(imgGroup, kinImage.getWidth(), 0, 'topright');
     addCornerAnchor(imgGroup, 0,kinImage.getHeight(), 'botleft');
