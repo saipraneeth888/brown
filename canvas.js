@@ -197,17 +197,21 @@ function addImgBound(group, width, height, name)
                              y: 0,
                              width: width,
                              height: height,
-                             name: name
+                             name: name,
+                             stroke: 'black',
+                             opacity: 0
                              });
-    bound.on('mousedown touchstart',function() {
-             bound.setStroke('black');
-             });
-    bound.on('mouseup touchend',function() {setTimeout(function() {
-             var layer = group.getLayer();
-             bound.setStroke('none');
-             layer.batchDraw();}, 2000);
-             });
     group.add(bound);
+    var tween = new Kinetic.Tween({
+                                   node: bound,
+                                   duration: 0.5,
+                                   opacity: 1
+    })
+    bound.on('mousedown touchstart',function() {
+             tween.play();
+             });
+    bound.on('mouseup touchend',function() {setTimeout(function() {tween.reverse();}, 2000);
+             });
 }
 
 function addAnchors(kinImage, imgGroup) {
