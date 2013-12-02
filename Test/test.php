@@ -13,7 +13,7 @@ class SaveTest extends PHPUnit_Framework_TestCase
      * @depends testImgTransform
      */
     public function testSavePNGFile($data){
-        define('UPLOAD_DIR', './img/users/');
+        define('UPLOAD_DIR', 'Test/img/users/');
         $uniqueID = uniqid();
         $file = UPLOAD_DIR . $uniqueID . '.png';
         $success = file_put_contents($file, $data);
