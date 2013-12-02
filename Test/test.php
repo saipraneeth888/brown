@@ -18,7 +18,7 @@ class SaveTest extends PHPUnit_Framework_TestCase
         $file = UPLOAD_DIR . $uniqueID . '.png';
         $success = file_put_contents($file, $data);
         $pngFile = exif_imagetype($file);
-        unlink($file);
+      //  unlink($file);
         $this->assertTrue($pngFile != false);
     }
     
