@@ -128,7 +128,7 @@ $("#body01").click(function () {
             addAnchors(image2, imageGroup);
             layer.draw();
         } 
-image.src = "img/pic/body01.svg";
+image.src = "img/characters/character1.svg";
 });
 
 $("#body02").click(function () {
@@ -156,7 +156,7 @@ $("#body02").click(function () {
             addAnchors(image2, imageGroup);
             layer.draw();
 }
-image.src = "img/pic/body02.svg";
+image.src = "img/characters/character2.svg";
 });
 
 $("#hand01").click(function () {
@@ -183,7 +183,7 @@ $("#hand01").click(function () {
             addAnchors(image2, imageGroup);
             layer.draw();
 }
-image.src = "img/pic/hand01.svg";
+image.src = "img/characters/character3.svg";
 });
 
 $("#hand02").click(function () {
@@ -211,7 +211,7 @@ $("#hand02").click(function () {
             addAnchors(image2, imageGroup);
             layer.draw();
 }
-image.src = "img/pic/hand02.svg";
+image.src = "img/characters/character4.svg";
 });
 
 $("#headA01").click(function () {
@@ -239,7 +239,7 @@ $("#headA01").click(function () {
             addAnchors(image2, imageGroup);
             layer.draw();
 }
-image.src = "img/pic/headA01.svg";
+image.src = "img/characters/character4.svg";
 });
 
 $("#headA02").click(function () {
@@ -267,7 +267,7 @@ $("#headA02").click(function () {
             addAnchors(image2, imageGroup);
             layer.draw();
 }
-image.src = "img/pic/headA02.svg";
+image.src = "img/characters/character5.svg";
 });
 $("#headB01").click(function () {
 
@@ -294,7 +294,7 @@ $("#headB01").click(function () {
             addAnchors(image2, imageGroup);
             layer.draw();
 }
-image.src = "img/pic/headB01.svg";
+image.src = "img/characters/character6.svg";
 });
 //a
 $("#headB02").click(function () {
@@ -348,7 +348,7 @@ $("#prop01").click(function () {
             addAnchors(image2, imageGroup);
             layer.draw();
 }
-image.src = "img/pic/prop01.svg";
+image.src = "img/characters/character2.svg";
 });
         
 layer.on("mouseover", function(evt) {
