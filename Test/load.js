@@ -73,7 +73,7 @@ var mainImage = new Image();
 mainImage.onload = function () {
     draw(mainImage,false, 'mainImageId');
 };
-mainImage.src = "img/Background.svg";
+mainImage.src = "img/Backgrounds/background1.svg";
 
 var mainImage2 = new Image();
 mainImage2.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';
