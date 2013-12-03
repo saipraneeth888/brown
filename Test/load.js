@@ -150,6 +150,10 @@ $("#body01").click(function () {
                  // add the layer to the stage
             layer[counter-1].add(imageGroup);
             addAnchors(image2, imageGroup);
+            if (oldtext[counter-1] != null) {
+                var textgroup = oldtext[counter-1].getParent();
+                textgroup.moveToTop();
+            }
             layer[counter-1].draw();
            
         } 
@@ -180,6 +184,10 @@ $("#body02").click(function () {
             layer[counter-1].add(imageGroup);
             
             addAnchors(image2, imageGroup);
+                   if (oldtext[counter-1] != null) {
+                   var textgroup = oldtext[counter-1].getParent();
+                   textgroup.moveToTop();
+                   }
             layer[counter-1].draw();
 }
 image.src = "img/pic/body02.svg";
@@ -207,6 +215,10 @@ $("#hand01").click(function () {
             layer[counter-1].add(imageGroup);
             
             addAnchors(image2, imageGroup);
+                   if (oldtext[counter-1] != null) {
+                   var textgroup = oldtext[counter-1].getParent();
+                   textgroup.moveToTop();
+                   }
             layer[counter-1].draw();
 }
 image.src = "img/pic/hand01.svg";
@@ -235,6 +247,10 @@ $("#hand02").click(function () {
             layer[counter-1].add(imageGroup);
             
             addAnchors(image2, imageGroup);
+                   if (oldtext[counter-1] != null) {
+                   var textgroup = oldtext[counter-1].getParent();
+                   textgroup.moveToTop();
+                   }
             layer[counter-1].draw();
 }
 image.src = "img/pic/hand02.svg";
@@ -263,6 +279,10 @@ $("#headA01").click(function () {
             layer[counter-1].add(imageGroup);
             
             addAnchors(image2, imageGroup);
+                    if (oldtext[counter-1] != null) {
+                    var textgroup = oldtext[counter-1].getParent();
+                    textgroup.moveToTop();
+                    }
             layer[counter-1].draw();
 }
 image.src = "img/pic/headA01.svg";
@@ -291,6 +311,10 @@ $("#headA02").click(function () {
             layer[counter-1].add(imageGroup);
             
             addAnchors(image2, imageGroup);
+                    if (oldtext[counter-1] != null) {
+                    var textgroup = oldtext[counter-1].getParent();
+                    textgroup.moveToTop();
+                    }
             layer[counter-1].draw();
 }
 image.src = "img/pic/headA02.svg";
@@ -318,6 +342,10 @@ $("#headB01").click(function () {
             layer[counter-1].add(imageGroup);
             
             addAnchors(image2, imageGroup);
+                    if (oldtext[counter-1] != null) {
+                    var textgroup = oldtext[counter-1].getParent();
+                    textgroup.moveToTop();
+                    }
             layer[counter-1].draw();
 }
 image.src = "img/pic/headB01.svg";
@@ -345,6 +373,10 @@ $("#headB02").click(function () {
             layer[counter-1].add(imageGroup);
             
             addAnchors(image2, imageGroup);
+                    if (oldtext[counter-1] != null) {
+                    var textgroup = oldtext[counter-1].getParent();
+                    textgroup.moveToTop();
+                    }
             layer[counter-1].draw();
 }
 image.src = "img/pic/headB02.svg";
@@ -372,6 +404,10 @@ $("#prop01").click(function () {
             layer[counter-1].add(imageGroup);
             
             addAnchors(image2, imageGroup);
+                   if (oldtext[counter-1] != null) {
+                   var textgroup = oldtext[counter-1].getParent();
+                   textgroup.moveToTop();
+                   }
             layer[counter-1].draw();
 }
 image.src = "img/pic/prop01.svg";
