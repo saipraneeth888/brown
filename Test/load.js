@@ -80,6 +80,8 @@ mainImage2.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';
 
 if((m!=1)&&(m!=2))
     {
+        
+
 $(".background").click(function () {
     var newImage = new Image();
     newImage.src = 'img/Backgrounds/' +$(this).attr('value');
@@ -412,7 +414,293 @@ $("#prop01").click(function () {
 }
 image.src = "img/characters/character6.svg";
 });
-    }    
+$("#prop1").click(function () {
+
+        var image = new Image();
+        image.onload = function () {
+        var image2 = new Kinetic.Image({
+        x: 0,
+        y: 0,
+        width: 150,
+        height: 150,
+        image: image,
+        name: 'image'
+        });
+        var imageGroup = new Kinetic.Group({
+                                       x: 0,
+                                       y: 0,
+                                       draggable: true
+                                       });
+            imageGroup.add(image2);
+            // add the layer to the stage
+            layer[counter-1].add(imageGroup);
+            
+            addAnchors(image2, imageGroup);
+                   if (oldtext[counter-1] != null) {
+                   var textgroup = oldtext[counter-1].getParent();
+                   textgroup.moveToTop();
+                   }
+            layer[counter-1].draw();
+}
+image.src = "img/props/prop1.svg";
+});
+$("#prop2").click(function () {
+
+        var image = new Image();
+        image.onload = function () {
+        var image2 = new Kinetic.Image({
+        x: 0,
+        y: 0,
+        width: 150,
+        height: 150,
+        image: image,
+        name: 'image'
+        });
+        var imageGroup = new Kinetic.Group({
+                                       x: 0,
+                                       y: 0,
+                                       draggable: true
+                                       });
+            imageGroup.add(image2);
+            // add the layer to the stage
+            layer[counter-1].add(imageGroup);
+            
+            addAnchors(image2, imageGroup);
+                   if (oldtext[counter-1] != null) {
+                   var textgroup = oldtext[counter-1].getParent();
+                   textgroup.moveToTop();
+                   }
+            layer[counter-1].draw();
+}
+image.src = "img/props/prop2.svg";
+});
+$("#prop3").click(function () {
+
+        var image = new Image();
+        image.onload = function () {
+        var image2 = new Kinetic.Image({
+        x: 0,
+        y: 0,
+        width: 150,
+        height: 150,
+        image: image,
+        name: 'image'
+        });
+        var imageGroup = new Kinetic.Group({
+                                       x: 0,
+                                       y: 0,
+                                       draggable: true
+                                       });
+            imageGroup.add(image2);
+            // add the layer to the stage
+            layer[counter-1].add(imageGroup);
+            
+            addAnchors(image2, imageGroup);
+                   if (oldtext[counter-1] != null) {
+                   var textgroup = oldtext[counter-1].getParent();
+                   textgroup.moveToTop();
+                   }
+            layer[counter-1].draw();
+}
+image.src = "img/props/prop3.svg";
+});
+$("#prop4").click(function () {
+
+        var image = new Image();
+        image.onload = function () {
+        var image2 = new Kinetic.Image({
+        x: 0,
+        y: 0,
+        width: 150,
+        height: 150,
+        image: image,
+        name: 'image'
+        });
+        var imageGroup = new Kinetic.Group({
+                                       x: 0,
+                                       y: 0,
+                                       draggable: true
+                                       });
+            imageGroup.add(image2);
+            // add the layer to the stage
+            layer[counter-1].add(imageGroup);
+            
+            addAnchors(image2, imageGroup);
+                   if (oldtext[counter-1] != null) {
+                   var textgroup = oldtext[counter-1].getParent();
+                   textgroup.moveToTop();
+                   }
+            layer[counter-1].draw();
+}
+image.src = "img/props/prop4.svg";
+});
+$("#prop5").click(function () {
+
+        var image = new Image();
+        image.onload = function () {
+        var image2 = new Kinetic.Image({
+        x: 0,
+        y: 0,
+        width: 150,
+        height: 150,
+        image: image,
+        name: 'image'
+        });
+        var imageGroup = new Kinetic.Group({
+                                       x: 0,
+                                       y: 0,
+                                       draggable: true
+                                       });
+            imageGroup.add(image2);
+            // add the layer to the stage
+            layer[counter-1].add(imageGroup);
+            
+            addAnchors(image2, imageGroup);
+                   if (oldtext[counter-1] != null) {
+                   var textgroup = oldtext[counter-1].getParent();
+                   textgroup.moveToTop();
+                   }
+            layer[counter-1].draw();
+}
+image.src = "img/props/prop5.svg";
+});
+$("#prop6").click(function () {
+
+        var image = new Image();
+        image.onload = function () {
+        var image2 = new Kinetic.Image({
+        x: 0,
+        y: 0,
+        width: 150,
+        height: 150,
+        image: image,
+        name: 'image'
+        });
+        var imageGroup = new Kinetic.Group({
+                                       x: 0,
+                                       y: 0,
+                                       draggable: true
+                                       });
+            imageGroup.add(image2);
+            // add the layer to the stage
+            layer[counter-1].add(imageGroup);
+            
+            addAnchors(image2, imageGroup);
+                   if (oldtext[counter-1] != null) {
+                   var textgroup = oldtext[counter-1].getParent();
+                   textgroup.moveToTop();
+                   }
+            layer[counter-1].draw();
+}
+image.src = "img/props/prop6.svg";
+});
+
+$("#background1").click(function () {
+    var image = new Image();
+    image.onload = function () {
+        if(typeof id == 'undefined') id = '';
+        if(typeof name == 'undefined') name = '';
+        var img = new Kinetic.Image({
+            image: image,
+            draggable: false,
+            width: 600,//document.getElementById(c).offsetWidth,
+            height: 600,//document.getElementById(c).offsetHeight,
+            id: id,
+            name: name
+        });
+
+             // add the layer to the stage
+        layer[counter-1].add(img);
+        layer[counter-1].draw();
+    } 
+image.src = "img/backgrounds/background1.svg";
+});
+
+$("#background2").click(function () {
+    var image = new Image();
+    image.onload = function () {
+        if(typeof id == 'undefined') id = '';
+        if(typeof name == 'undefined') name = '';
+        var img = new Kinetic.Image({
+            image: image,
+            draggable: false,
+            width: 600,//document.getElementById(c).offsetWidth,
+            height: 600,//document.getElementById(c).offsetHeight,
+            id: id,
+            name: name
+        });
+
+             // add the layer to the stage
+        layer[counter-1].add(img);
+        layer[counter-1].draw();
+    } 
+image.src = "img/backgrounds/background2.svg";
+});
+
+$("#background3").click(function () {
+    var image = new Image();
+    image.onload = function () {
+        if(typeof id == 'undefined') id = '';
+        if(typeof name == 'undefined') name = '';
+        var img = new Kinetic.Image({
+            image: image,
+            draggable: false,
+            width: 600,//document.getElementById(c).offsetWidth,
+            height: 600,//document.getElementById(c).offsetHeight,
+            id: id,
+            name: name
+        });
+
+             // add the layer to the stage
+        layer[counter-1].add(img);
+        layer[counter-1].draw();
+    } 
+image.src = "img/backgrounds/background3.svg";
+});
+
+$("#background4").click(function () {
+    var image = new Image();
+    image.onload = function () {
+        if(typeof id == 'undefined') id = '';
+        if(typeof name == 'undefined') name = '';
+        var img = new Kinetic.Image({
+            image: image,
+            draggable: false,
+            width: 600,//document.getElementById(c).offsetWidth,
+            height: 600,//document.getElementById(c).offsetHeight,
+            id: id,
+            name: name
+        });
+
+             // add the layer to the stage
+        layer[counter-1].add(img);
+        layer[counter-1].draw();
+    } 
+image.src = "img/backgrounds/background4.svg";
+});
+
+$("#background5").click(function () {
+    var image = new Image();
+    image.onload = function () {
+        if(typeof id == 'undefined') id = '';
+        if(typeof name == 'undefined') name = '';
+        var img = new Kinetic.Image({
+            image: image,
+            draggable: false,
+            width: 600,//document.getElementById(c).offsetWidth,
+            height: 600,//document.getElementById(c).offsetHeight,
+            id: id,
+            name: name
+        });
+
+             // add the layer to the stage
+        layer[counter-1].add(img);
+        layer[counter-1].draw();
+    } 
+image.src = "img/backgrounds/background5.svg";
+});
+
+}    
 layer[m].on("mouseover", function(evt) {
     var shape = evt.targetNode;
     if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName() == "bound")
