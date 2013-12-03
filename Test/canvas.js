@@ -4,6 +4,7 @@ function updateCorner(anchor) {
     var botleft = group.get('.botleft')[0];
     var topright = group.get('.topright')[0];
     var botright = group.get('.botright')[0];
+    var bound = group.get('.bound')[0];
     var anchorX = anchor.getX();
     var anchorY = anchor.getY();
     var img = group.get('.image')[0];
@@ -55,10 +56,12 @@ function updateCorner(anchor) {
             break;
     }
     img.setPosition(topleft.getPosition());
+    bound.setPosition(topleft.getPosition());
     var width = topright.getX()-topleft.getX();
     var height = botright.getY()-topleft.getY();
     if (width && height){
         img.setSize(width,height);
+        bound.setSize(width,height);
         topleft.setRadius(width/3);
         botleft.setRadius(width/3);
         topright.setRadius(width/3);
@@ -128,66 +131,135 @@ function addCornerAnchor(group,x,y,name)
     switch (name) {
       case 'topleft':
         anchor.setDragBoundFunc(function(pos) {
-          var botright = group.get('.botright')[0];
-          var X = botright.getAbsolutePosition().x;
-          var Y = botright.getAbsolutePosition().y;
-          if (X >= pos.x) {
-            X = pos.x;
-          }
-          if (Y >= pos.y) {
-            Y = pos.y;
-          }
-          return {x:X, y:Y};
+                                var botright = group.get('.botright')[0];
+                                var minX = botright.getAbsolutePosition().x-30;
+                                var minY = botright.getAbsolutePosition().y-30;
+                                var maxX = botright.getAbsolutePosition().x-300;
+                                var maxY = botright.getAbsolutePosition().y-300;
+                                var X, Y;
+                                if (minX >= pos.x && maxX <= pos.x) {
+                                    X = pos.x;
+                                } else if(minX < pos.x) {
+                                    X = minX;
+                                } else if(maxX > pos.x) {
+                                    X = maxX;
+                                }
+                                if (minY >= pos.y && maxY <= pos.y) {
+                                    Y = pos.y;
+                                } else if(minY < pos.y) {
+                                    Y = minY;
+                                } else if(maxY > pos.y) {
+                                    Y = maxY;
+                                }
+                                return {x:X, y:Y};
         });
         break;
       case 'botright':
       anchor.setDragBoundFunc(function(pos) {
-          var topleft = group.get('.topleft')[0];
-          var X = topleft.getAbsolutePosition().x;
-          var Y = topleft.getAbsolutePosition().y;
-          if (X <= pos.x) {
-            X = pos.x;
-          }
-          if (Y <= pos.y) {
-            Y = pos.y;
-          }
-          return {x:X, y:Y};
+                              var topleft = group.get('.topleft')[0];
+                              var minX = topleft.getAbsolutePosition().x+30;
+                              var minY = topleft.getAbsolutePosition().y+30;
+                              var maxX = topleft.getAbsolutePosition().x+300;
+                              var maxY = topleft.getAbsolutePosition().y+300;
+                              var X, Y;
+                              if (minX <= pos.x && maxX >= pos.x) {
+                                X = pos.x;
+                              } else if (minX > pos.x) {
+                                X = minX;
+                              } else if (maxX < pos.x) {
+                                X = maxX;
+                              }
+                              if (minY <= pos.y && maxY >= pos.y) {
+                                Y = pos.y;
+                              } else if (minY > pos.y) {
+                                Y = minY;
+                              } else if (maxY < pos.y) {
+                                Y = maxY;
+                              }
+                              return {x:X, y:Y};
         });
         break;
       case 'botleft':
-      anchor.setDragBoundFunc(function(pos) {
-          var topright = group.get('.topright')[0];
-          var X = topright.getAbsolutePosition().x;
-          var Y = topright.getAbsolutePosition().y;
-          if (X >= pos.x) {
-            X = pos.x;
-          }
-          if (Y <= pos.y) {
-            Y = pos.y;
-          }
-          return {x:X, y:Y};
-        });
-        break;
+            anchor.setDragBoundFunc(function(pos) {
+                              var topright = group.get('.topright')[0];
+                              var minX = topright.getAbsolutePosition().x-30;
+                              var minY = topright.getAbsolutePosition().y+30;
+                              var maxX = topright.getAbsolutePosition().x-300;
+                              var maxY = topright.getAbsolutePosition().y+300;
+                              var X, Y;
+                              if (minX >= pos.x && maxX <= pos.x) {
+                                X = pos.x;
+                              } else if (minX < pos.x) {
+                                X = minX;
+                              } else if (maxX > pos.x) {
+                                X = maxX;
+                              }
+                              if (minY <= pos.y && maxY >= pos.y) {
+                                Y = pos.y;
+                              } else if (minY > pos.y) {
+                                Y = minY;
+                              } else if (maxY < pos.y) {
+                                Y = maxY;
+                              }
+                              return {x:X, y:Y};
+                              });
+            break;
       case 'topright':
       anchor.setDragBoundFunc(function(pos) {
-          var botleft = group.get('.botleft')[0];
-          var X = botleft.getAbsolutePosition().x;
-          var Y = botleft.getAbsolutePosition().y;
-          if (X <= pos.x) {
-            X = pos.x;
-          }
-          if (Y >= pos.y) {
-            Y = pos.y;
-          }
-          return {x:X, y:Y};
-        });
+                              var botleft = group.get('.botleft')[0];
+                              var minX = botleft.getAbsolutePosition().x+30;
+                              var minY = botleft.getAbsolutePosition().y-30;
+                              var maxX = botleft.getAbsolutePosition().x+300;
+                              var maxY = botleft.getAbsolutePosition().y-300;
+                              var X, Y;
+                              if (minX <= pos.x && maxX >= pos.x) {
+                                X = pos.x;
+                              } else if (minX > pos.x) {
+                                X = minX;
+                              } else if (maxX < pos.x) {
+                                X = maxX;
+                              }
+                              if (minY >= pos.y && maxY <= pos.y) {
+                                Y = pos.y;
+                              } else if (minY < pos.y) {
+                                Y = minY;
+                              } else if (maxY > pos.y) {
+                                Y = maxY;
+                              }
+                              return {x:X, y:Y};
+                              });
         break;
     }
     group.add(anchor);
     
 }
 
+function addImgBound(group, width, height, name)
+{
+    var bound = new Kinetic.Rect({
+                             x: 0,
+                             y: 0,
+                             width: width,
+                             height: height,
+                             name: name,
+                             stroke: 'black',
+                             opacity: 0
+                             });
+    group.add(bound);
+    var tween = new Kinetic.Tween({
+                                   node: bound,
+                                   duration: 0.5,
+                                   opacity: 1
+    })
+    bound.on('mousedown touchstart',function() {
+             tween.play();
+             });
+    bound.on('mouseup touchend',function() {setTimeout(function() {tween.reverse();}, 2000);
+             });
+}
+
 function addAnchors(kinImage, imgGroup) {
+    addImgBound(imgGroup, kinImage.getWidth(), kinImage.getHeight(),'bound');
     addCornerAnchor(imgGroup, 0,0, 'topleft');
     addCornerAnchor(imgGroup, kinImage.getWidth(), 0, 'topright');
     addCornerAnchor(imgGroup, 0,kinImage.getHeight(), 'botleft');

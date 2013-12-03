@@ -1,3 +1,4 @@
+var oldtext = new Array();
 window.onload = init;
 //window.onload = init;
 function init(){
@@ -46,8 +47,8 @@ function draw(image,drag,id,name){
     var img = new Kinetic.Image({
         image: image,
         draggable: drag,
-        width: document.getElementById(c).offsetWidth,
-        height: document.getElementById(c).offsetHeight,
+        width: 600,//document.getElementById(c).offsetWidth,
+        height: 600,//document.getElementById(c).offsetHeight,
         id: id,
         name: name
     });
@@ -72,7 +73,7 @@ var mainImage = new Image();
 mainImage.onload = function () {
     draw(mainImage,false, 'mainImageId');
 };
-mainImage.src = "img/Background.svg";
+mainImage.src = "img/Backgrounds/background2.svg";
 
 var mainImage2 = new Image();
 mainImage2.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';
@@ -89,23 +90,41 @@ $(".background").click(function () {
 });
 $("#addbutton").click(function () {
     // simple label
-    var label = new Kinetic.Label({
-        x: 20,
-        y: 20,
-        draggable: true
-    });
-    label.add(new Kinetic.Tag({
-        fill: 'green'
-    }));
-    label.add(new Kinetic.Text({
-        text: $("#newtext").val(),
-        fontFamily: 'Verdana',
-        fontSize: 18,
-        padding: 10,
-        name: "caption",
-        fill: 'white'
-    }));
-    layer[counter-1].add(label);
+    if (oldtext[counter-1] == null) {
+        oldtext[counter-1] = new Kinetic.Text({
+            text: $("#newtext").val(),
+            x: 0,
+            y: 20,
+            width: 600,
+            fontFamily: 'Verdana',
+            fontSize: 24,
+            padding: 10,
+            name: "caption",
+            align: 'center',
+            fill: 'black',
+            draggable: false
+        });
+        var bound = new Kinetic.Rect({
+            x: 0,
+            y: 0,
+            width: 600,
+            height: 90,
+            fill: 'white',
+            stroke: 'black',
+            name: "bound",
+            draggable: false
+        });
+        var group = new Kinetic.Group({
+            x:0,
+            y:510,
+            draggable: false
+        });
+        group.add(bound);
+        group.add(oldtext[counter-1]);
+        layer[counter-1].add(group);
+    } else {
+        oldtext[counter-1].setText($("#newtext").val());
+    }
     layer[counter-1].draw();
 });
 $("#body01").click(function () {
@@ -131,6 +150,10 @@ $("#body01").click(function () {
                  // add the layer to the stage
             layer[counter-1].add(imageGroup);
             addAnchors(image2, imageGroup);
+            if (oldtext[counter-1] != null) {
+                var textgroup = oldtext[counter-1].getParent();
+                textgroup.moveToTop();
+            }
             layer[counter-1].draw();
            
         } 
@@ -161,6 +184,10 @@ $("#body02").click(function () {
             layer[counter-1].add(imageGroup);
             
             addAnchors(image2, imageGroup);
+                   if (oldtext[counter-1] != null) {
+                   var textgroup = oldtext[counter-1].getParent();
+                   textgroup.moveToTop();
+                   }
             layer[counter-1].draw();
 }
 image.src = "img/pic/body02.svg";
@@ -188,6 +215,10 @@ $("#hand01").click(function () {
             layer[counter-1].add(imageGroup);
             
             addAnchors(image2, imageGroup);
+                   if (oldtext[counter-1] != null) {
+                   var textgroup = oldtext[counter-1].getParent();
+                   textgroup.moveToTop();
+                   }
             layer[counter-1].draw();
 }
 image.src = "img/pic/hand01.svg";
@@ -216,6 +247,10 @@ $("#hand02").click(function () {
             layer[counter-1].add(imageGroup);
             
             addAnchors(image2, imageGroup);
+                   if (oldtext[counter-1] != null) {
+                   var textgroup = oldtext[counter-1].getParent();
+                   textgroup.moveToTop();
+                   }
             layer[counter-1].draw();
 }
 image.src = "img/pic/hand02.svg";
@@ -244,6 +279,10 @@ $("#headA01").click(function () {
             layer[counter-1].add(imageGroup);
             
             addAnchors(image2, imageGroup);
+                    if (oldtext[counter-1] != null) {
+                    var textgroup = oldtext[counter-1].getParent();
+                    textgroup.moveToTop();
+                    }
             layer[counter-1].draw();
 }
 image.src = "img/pic/headA01.svg";
@@ -272,6 +311,10 @@ $("#headA02").click(function () {
             layer[counter-1].add(imageGroup);
             
             addAnchors(image2, imageGroup);
+                    if (oldtext[counter-1] != null) {
+                    var textgroup = oldtext[counter-1].getParent();
+                    textgroup.moveToTop();
+                    }
             layer[counter-1].draw();
 }
 image.src = "img/pic/headA02.svg";
@@ -299,6 +342,10 @@ $("#headB01").click(function () {
             layer[counter-1].add(imageGroup);
             
             addAnchors(image2, imageGroup);
+                    if (oldtext[counter-1] != null) {
+                    var textgroup = oldtext[counter-1].getParent();
+                    textgroup.moveToTop();
+                    }
             layer[counter-1].draw();
 }
 image.src = "img/pic/headB01.svg";
@@ -326,6 +373,10 @@ $("#headB02").click(function () {
             layer[counter-1].add(imageGroup);
             
             addAnchors(image2, imageGroup);
+                    if (oldtext[counter-1] != null) {
+                    var textgroup = oldtext[counter-1].getParent();
+                    textgroup.moveToTop();
+                    }
             layer[counter-1].draw();
 }
 image.src = "img/pic/headB02.svg";
@@ -353,6 +404,10 @@ $("#prop01").click(function () {
             layer[counter-1].add(imageGroup);
             
             addAnchors(image2, imageGroup);
+                   if (oldtext[counter-1] != null) {
+                   var textgroup = oldtext[counter-1].getParent();
+                   textgroup.moveToTop();
+                   }
             layer[counter-1].draw();
 }
 image.src = "img/pic/prop01.svg";
@@ -360,12 +415,12 @@ image.src = "img/pic/prop01.svg";
     }    
 layer[m].on("mouseover", function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image" || shape.getName() == "caption")
+    if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName() == "bound")
     tooltip.show();
 });
 layer[m].on("touchstart", function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image" || shape.getName() == "caption")
+    if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName() == "bound")
     tooltip2.show();
 });
 
@@ -382,18 +437,24 @@ layer[m].on("touchend", function(evt) {
 
 layer[m].on('dblclick', function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image" || shape.getName() == "caption"){
+    if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName() == "bound"){
         var group = shape.getParent();
         group.remove();
-        layer[counter-1].draw();  
+        layer[counter-1].draw();
+        if (group.get('.caption')[0] != undefined) {
+            oldtext[counter-1] = null;
+        }
     }
 }); 
 layer[m].on('dbltap', function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image" || shape.getName() == "caption"){
+    if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName() == "bound"){
         var group = shape.getParent();
         group.remove();
-        layer[counter-1].draw();  
+        layer[counter-1].draw();
+        if (group.get('.caption')[0] != undefined) {
+            oldtext[counter-1] = null;
+        }
     }
 });
 document.getElementById('save').addEventListener('click', function() {

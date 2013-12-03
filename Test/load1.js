@@ -77,36 +77,16 @@ mainImage.src = "img/Background.svg";
 var mainImage2 = new Image();
 mainImage2.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';
 
+if((m!=1)&&(m!=2))
+    {
 $(".background").click(function () {
     var newImage = new Image();
     newImage.src = 'img/Backgrounds/' +$(this).attr('value');
-    layer[m].get('#mainImageId')[0].setImage(newImage);
-    layer[m].get('#mainImageId')[0].setDraggable(false);
-    layer[m].draw();
-});
-    
-$("#changebackground").click(function () {
-	layer.get('#mainImageId')[0].setImage(mainImage2);
-    layer.get('#mainImageId')[0].setDraggable(false);
-	//BackImg.moveToTop();
-	//BackImg.src = "img/pic/body01.svg";
-	layer.draw();
-});
-
-
-    
-$("#changebackground").click(function () {
-  
-    layer[counter-1].get('#mainImageId')[0].setImage(mainImage2);
-    layer[counter-1].get('#mainImageId')[0].setDraggable(false);
-    //BackImg.moveToTop();
-    //BackImg.src = "img/pic/body01.svg";
+  //  alert(layer[counter-1]);
+    layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(newImage);
+    //layer[counter-1].find('#mainImageId')[0].setDraggable(false);
     layer[counter-1].draw();
 });
-
-
-
-
 $("#addbutton").click(function () {
     // simple label
     var label = new Kinetic.Label({
@@ -128,8 +108,6 @@ $("#addbutton").click(function () {
     layer[counter-1].add(label);
     layer[counter-1].draw();
 });
-if((m!=1)&&(m!=2))
-    {
 $("#body01").click(function () {
         var image = new Image();
         image.onload = function () {
@@ -382,12 +360,12 @@ image.src = "img/pic/prop01.svg";
     }    
 layer[m].on("mouseover", function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName()=="bound")
+    if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName() == "bound")
     tooltip.show();
 });
 layer[m].on("touchstart", function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName()=="bound")
+    if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName() == "bound")
     tooltip2.show();
 });
 
@@ -404,7 +382,7 @@ layer[m].on("touchend", function(evt) {
 
 layer[m].on('dblclick', function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName()=="bound"){
+    if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName() == "bound"){
         var group = shape.getParent();
         group.remove();
         layer[counter-1].draw();  
@@ -412,14 +390,27 @@ layer[m].on('dblclick', function(evt) {
 }); 
 layer[m].on('dbltap', function(evt) {
     var shape = evt.targetNode;
-    if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName()=="bound"){
+    if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName() == "bound"){
         var group = shape.getParent();
         group.remove();
         layer[counter-1].draw();  
     }
 });
 document.getElementById('save').addEventListener('click', function() {
-        stage[m].toDataURL({
+    var stageJoin = new Kinetic.Stage({
+    container:"containerJoin",
+    width: document.getElementById(c).offsetWidth*3,
+    height: document.getElementById(c).offsetHeight
+    });
+    stageJoin.add(layer[0]);
+    var layer1=layer[1];
+    var layer2=layer[2];
+    layer[1].setX(document.getElementById(c).offsetWidth);
+  //  layer[1].setX(600);
+    layer[2].setX(document.getElementById(c).offsetWidth*2);
+    stageJoin.add(layer[1]);
+    stageJoin.add(layer[2]);
+        stageJoin.toDataURL({
           callback: function(dataUrl) {
             //window.open(dataUrl);
             //alert(dataUrl+"clicked");
@@ -432,8 +423,7 @@ document.getElementById('save').addEventListener('click', function() {
                 }).done(function(o) {
                 console.log('saved');
                         }).done(function( data ) {
-                                //alert('HI! ' + data);
-				window.location.href = 'http://story-boarder.herokuapp.com/' + data;
+                                window.location.href = 'http://story-boarder.herokuapp.com/Test/' + data;
                                 });
           }
         });
