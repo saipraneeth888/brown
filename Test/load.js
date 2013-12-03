@@ -47,8 +47,8 @@ function draw(image,drag,id,name){
     var img = new Kinetic.Image({
         image: image,
         draggable: drag,
-        width: document.getElementById(c).offsetWidth,
-        height: document.getElementById(c).offsetHeight,
+        width: 600,//document.getElementById(c).offsetWidth,
+        height: 600,//document.getElementById(c).offsetHeight,
         id: id,
         name: name
     });
@@ -73,7 +73,7 @@ var mainImage = new Image();
 mainImage.onload = function () {
     draw(mainImage,false, 'mainImageId');
 };
-mainImage.src = "img/Backgrounds/background1.svg";
+mainImage.src = "img/Backgrounds/background2.svg";
 
 var mainImage2 = new Image();
 mainImage2.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';
