@@ -1,4 +1,4 @@
-var oldtext;
+var oldtext = new Array();
 window.onload = init;
 //window.onload = init;
 function init(){
@@ -90,8 +90,8 @@ $(".background").click(function () {
 });
 $("#addbutton").click(function () {
     // simple label
-    if (oldtext == null) {
-        oldtext = new Kinetic.Text({
+    if (oldtext[counter-1] == null) {
+        oldtext[counter-1] = new Kinetic.Text({
             text: $("#newtext").val(),
             x: 0,
             y: 20,
@@ -120,10 +120,10 @@ $("#addbutton").click(function () {
             draggable: false
         });
         group.add(bound);
-        group.add(oldtext);
+        group.add(oldtext[counter-1]);
         layer[counter-1].add(group);
     } else {
-        oldtext.setText($("#newtext").val());
+        oldtext[counter-1].setText($("#newtext").val());
     }
     layer[counter-1].draw();
 });
@@ -406,7 +406,7 @@ layer[m].on('dblclick', function(evt) {
         group.remove();
         layer[counter-1].draw();
         if (group.get('.caption')[0] != undefined) {
-            oldtext = null;
+            oldtext[counter-1] = null;
         }
     }
 }); 
@@ -417,7 +417,7 @@ layer[m].on('dbltap', function(evt) {
         group.remove();
         layer[counter-1].draw();
         if (group.get('.caption')[0] != undefined) {
-            oldtext = null;
+            oldtext[counter-1] = null;
         }
     }
 });
