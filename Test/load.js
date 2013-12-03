@@ -1,3 +1,4 @@
+var oldtext;
 window.onload = init;
 //window.onload = init;
 function init(){
@@ -89,23 +90,41 @@ $(".background").click(function () {
 });
 $("#addbutton").click(function () {
     // simple label
-    var label = new Kinetic.Label({
-        x: 20,
-        y: 20,
-        draggable: true
-    });
-    label.add(new Kinetic.Tag({
-        fill: 'green'
-    }));
-    label.add(new Kinetic.Text({
-        text: $("#newtext").val(),
-        fontFamily: 'Verdana',
-        fontSize: 18,
-        padding: 10,
-        name: "caption",
-        fill: 'white'
-    }));
-    layer[counter-1].add(label);
+    if (oldtext == null) {
+        oldtext = new Kinetic.Text({
+            text: $("#newtext").val(),
+            x: 0,
+            y: 20,
+            width: 600,
+            fontFamily: 'Verdana',
+            fontSize: 24,
+            padding: 10,
+            name: "caption",
+            align: 'center',
+            fill: 'black',
+            draggable: false
+        });
+        var bound = new Kinetic.Rect({
+            x: 0,
+            y: 0,
+            width: 600,
+            height: 90,
+            fill: 'white',
+            stroke: 'black',
+            name: "bound",
+            draggable: false
+        });
+        var group = new Kinetic.Group({
+            x:0,
+            y:510,
+            draggable: false
+        });
+        group.add(bound);
+        group.add(oldtext);
+        layer[counter-1].add(group);
+    } else {
+        oldtext.setText($("#newtext").val());
+    }
     layer[counter-1].draw();
 });
 $("#body01").click(function () {
@@ -385,7 +404,10 @@ layer[m].on('dblclick', function(evt) {
     if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName() == "bound"){
         var group = shape.getParent();
         group.remove();
-        layer[counter-1].draw();  
+        layer[counter-1].draw();
+        if (group.get('.caption')[0] != undefined) {
+            oldtext = null;
+        }
     }
 }); 
 layer[m].on('dbltap', function(evt) {
@@ -393,7 +415,10 @@ layer[m].on('dbltap', function(evt) {
     if(shape.getName()=="image" || shape.getName() == "caption" || shape.getName() == "bound"){
         var group = shape.getParent();
         group.remove();
-        layer[counter-1].draw();  
+        layer[counter-1].draw();
+        if (group.get('.caption')[0] != undefined) {
+            oldtext = null;
+        }
     }
 });
 document.getElementById('save').addEventListener('click', function() {
