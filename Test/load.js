@@ -752,7 +752,20 @@ layer[m].on('dbltap', function(evt) {
     }
 });
 document.getElementById('save').addEventListener('click', function() {
-        stage[counter-1].toDataURL({
+    var stageJoin = new Kinetic.Stage({
+    container:"containerJoin",
+    width: document.getElementById(c).offsetWidth*3,
+    height: document.getElementById(c).offsetHeight
+    });
+    stageJoin.add(layer[0]);
+    var layer1=layer[1];
+    var layer2=layer[2];
+    layer[1].setX(document.getElementById(c).offsetWidth);
+  //  layer[1].setX(600);
+    layer[2].setX(document.getElementById(c).offsetWidth*2);
+    stageJoin.add(layer[1]);
+    stageJoin.add(layer[2]);
+        stageJoin.toDataURL({
           callback: function(dataUrl) {
             //window.open(dataUrl);
             //alert(dataUrl+"clicked");
