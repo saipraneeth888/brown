@@ -83,7 +83,7 @@ var mainImage = new Image();
 mainImage.onload = function () {
     draw(mainImage,false, 'mainImageId');
 };
-mainImage.src = "img/Backgrounds/background2.svg";
+mainImage.src = "img/backgrounds/background2.svg";
 
 var mainImage2 = new Image();
 mainImage2.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';
@@ -94,7 +94,7 @@ if((m!=1)&&(m!=2))
 
 $(".background").click(function () {
     var newImage = new Image();
-    newImage.src = 'img/Backgrounds/' +$(this).attr('value');
+    newImage.src = 'img/backgrounds/' +$(this).attr('value');
   //  alert(layer[counter-1]);
     layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(newImage);
     //layer[counter-1].find('#mainImageId')[0].setDraggable(false);
@@ -608,7 +608,7 @@ image.src = "img/props/prop6.svg";
 
 $(".background").click(function () {
     var newImage = new Image();
-    newImage.src = 'img/Backgrounds/' +$(this).attr('value');
+    newImage.src = 'img/backgrounds/' +$(this).attr('value');
   //  alert(layer[counter-1]);
     layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(newImage);
     //layer[counter-1].find('#mainImageId')[0].setDraggable(false);
