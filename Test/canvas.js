@@ -134,8 +134,8 @@ function addCornerAnchor(group,x,y,name)
                                 var botright = group.get('.botright')[0];
                                 var minX = botright.getAbsolutePosition().x-30;
                                 var minY = botright.getAbsolutePosition().y-30;
-                                var maxX = botright.getAbsolutePosition().x-300;
-                                var maxY = botright.getAbsolutePosition().y-300;
+                                var maxX = botright.getAbsolutePosition().x-600;
+                                var maxY = botright.getAbsolutePosition().y-600;
                                 var X, Y;
                                 if (minX >= pos.x && maxX <= pos.x) {
                                     X = pos.x;
@@ -159,8 +159,8 @@ function addCornerAnchor(group,x,y,name)
                               var topleft = group.get('.topleft')[0];
                               var minX = topleft.getAbsolutePosition().x+30;
                               var minY = topleft.getAbsolutePosition().y+30;
-                              var maxX = topleft.getAbsolutePosition().x+300;
-                              var maxY = topleft.getAbsolutePosition().y+300;
+                              var maxX = topleft.getAbsolutePosition().x+600;
+                              var maxY = topleft.getAbsolutePosition().y+600;
                               var X, Y;
                               if (minX <= pos.x && maxX >= pos.x) {
                                 X = pos.x;
@@ -184,8 +184,8 @@ function addCornerAnchor(group,x,y,name)
                               var topright = group.get('.topright')[0];
                               var minX = topright.getAbsolutePosition().x-30;
                               var minY = topright.getAbsolutePosition().y+30;
-                              var maxX = topright.getAbsolutePosition().x-300;
-                              var maxY = topright.getAbsolutePosition().y+300;
+                              var maxX = topright.getAbsolutePosition().x-600;
+                              var maxY = topright.getAbsolutePosition().y+600;
                               var X, Y;
                               if (minX >= pos.x && maxX <= pos.x) {
                                 X = pos.x;
@@ -209,8 +209,8 @@ function addCornerAnchor(group,x,y,name)
                               var botleft = group.get('.botleft')[0];
                               var minX = botleft.getAbsolutePosition().x+30;
                               var minY = botleft.getAbsolutePosition().y-30;
-                              var maxX = botleft.getAbsolutePosition().x+300;
-                              var maxY = botleft.getAbsolutePosition().y-300;
+                              var maxX = botleft.getAbsolutePosition().x+600;
+                              var maxY = botleft.getAbsolutePosition().y-600;
                               var X, Y;
                               if (minX <= pos.x && maxX >= pos.x) {
                                 X = pos.x;
