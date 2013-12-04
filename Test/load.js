@@ -106,8 +106,8 @@ $("#addbutton").click(function () {
         oldtext[counter-1] = new Kinetic.Text({
             text: $("#newtext").val(),
             x: 0,
-            y: 20,
-            width: 600,
+            y: window.innerWidth*0.5*1/20,
+            width: window.innerWidth*0.5,
             fontFamily: 'Verdana',
             fontSize: 24,
             padding: 10,
@@ -119,8 +119,8 @@ $("#addbutton").click(function () {
         var bound = new Kinetic.Rect({
             x: 0,
             y: 0,
-            width: 600,
-            height: 90,
+            width: window.innerWidth*0.5,
+            height: window.innerWidth*0.5*1/6,
             fill: 'white',
             stroke: 'black',
             name: "bound",
@@ -128,7 +128,7 @@ $("#addbutton").click(function () {
         });
         var group = new Kinetic.Group({
             x:0,
-            y:510,
+            y:window.innerWidth*0.5*5/6,
             draggable: false
         });
         group.add(bound);
