@@ -83,7 +83,7 @@ var mainImage = new Image();
 mainImage.onload = function () {
     draw(mainImage,false, 'mainImageId');
 };
-mainImage.src = "img/backgrounds/background2.svg";
+mainImage.src = "img/background/background2.svg";
 
 var mainImage2 = new Image();
 mainImage2.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';
@@ -94,7 +94,7 @@ if((m!=1)&&(m!=2))
 
 $(".background").click(function () {
     var newImage = new Image();
-    newImage.src = 'img/backgrounds/' +$(this).attr('value');
+    newImage.src = 'img/background/' +$(this).attr('value');
   //  alert(layer[counter-1]);
     layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(newImage);
     //layer[counter-1].find('#mainImageId')[0].setDraggable(false);
@@ -606,16 +606,6 @@ image.src = "img/props/prop6.svg";
 });
 
 
-$(".background").click(function () {
-    var newImage = new Image();
-    newImage.src = 'img/backgrounds/' +$(this).attr('value');
-  //  alert(layer[counter-1]);
-    layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(newImage);
-    //layer[counter-1].find('#mainImageId')[0].setDraggable(false);
-    layer[counter-1].draw();
-});
-
-
 $("#background1").click(function () {
     var image = new Image();
     image.onload = function () {
@@ -630,7 +620,7 @@ $("#background1").click(function () {
             name: "mainImageId"
         });
     } 
-    image.src = "img/backgrounds/background1.svg";
+    image.src = "img/background/background1.svg";
     
     layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(image);
     //layer[counter-1].get('#mainImageId')[0].setImage(image); //get the object with id "mainImageId"
@@ -651,7 +641,7 @@ $("#background2").click(function () {
             name: "mainImageId"
         });
     } 
-    image.src = "img/backgrounds/background2.svg";
+    image.src = "img/background/background2.svg";
     //layer[counter-1].get('#mainImageId')[0].setImage(image); //get the object with id "mainImageId"
     layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(image);
     layer[counter-1].draw();
@@ -673,7 +663,7 @@ $("#background3").click(function () {
             name: "mainImageId"
         });
     } 
-    image.src = "img/backgrounds/background3.svg";
+    image.src = "img/background/background3.svg";
     layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(image);
     layer[counter-1].draw();
 });
@@ -692,7 +682,7 @@ $("#background4").click(function () {
             name: "mainImageId"
         });
     } 
-    image.src = "img/backgrounds/background4.svg";
+    image.src = "img/background/background4.svg";
     layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(image);
     layer[counter-1].draw();
 });
@@ -711,7 +701,7 @@ $("#background5").click(function () {
             name: "mainImageId"
         });
     } 
-    image.src = "img/backgrounds/background5.svg";
+    image.src = "img/background/background5.svg";
     layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(image);
     layer[counter-1].draw();
 });
