@@ -760,11 +760,14 @@ document.getElementById('save').addEventListener('click', function() {
     stageJoin.add(layer[0]);
     var layer1=layer[1];
     var layer2=layer[2];
+    if(layer[1]!=null){
     layer[1].setX(document.getElementById(c).offsetWidth);
+    stageJoin.add(layer[1]);}
   //  layer[1].setX(600);
+  if(layer[2]!=null){
     layer[2].setX(document.getElementById(c).offsetWidth*2);
-    stageJoin.add(layer[1]);
-    stageJoin.add(layer[2]);
+    
+    stageJoin.add(layer[2]);}
         stageJoin.toDataURL({
           callback: function(dataUrl) {
             //window.open(dataUrl);
