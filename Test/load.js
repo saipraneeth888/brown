@@ -2,6 +2,16 @@ var oldtext = new Array();
 window.onload = init;
 //window.onload = init;
 function init(){
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    document.getElementById('wrapper').style.width = 3*width+"px";
+    document.getElementById('wrapper').style.height = width*0.5 +"px";
+    document.getElementById('first').style.width=width*0.5+"px";
+    document.getElementById('first').style.height=width*0.5+"px";
+    document.getElementById('second').style.width=width*0.5+"px";
+    document.getElementById('second').style.height=width*0.5+"px";
+    document.getElementById('third').style.width=width*0.5+"px";
+    document.getElementById('third').style.height=width*0.5+"px";
     setStage(0);
   //  setStage(1);
  //   setStage(2);
@@ -18,8 +28,8 @@ function setStage(m) {
     }
  stage[m] = new Kinetic.Stage({
     container: c,
-    width: window.innerWidth,
-    height: window.innerHeight
+    width: window.innerWidth*0.5,
+    height: window.innerWidth*0.5
 });
 //alert(stage.getX()+''+stage.getY());
 
@@ -47,8 +57,8 @@ function draw(image,drag,id,name){
     var img = new Kinetic.Image({
         image: image,
         draggable: drag,
-        width: 600,//document.getElementById(c).offsetWidth,
-        height: 600,//document.getElementById(c).offsetHeight,
+        width: window.innerWidth*0.5,//document.getElementById(c).offsetWidth,
+        height: window.innerWidth*0.5,//document.getElementById(c).offsetHeight,
         id: id,
         name: name
     });
