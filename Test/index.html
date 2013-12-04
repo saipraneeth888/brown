@@ -166,9 +166,16 @@
     </a>  
   </div>   
   <div class="col-sm-1 col-md-1 bw tilt pic">
-    <a href id="addbutton">
-      <img class="imgButton" src="img/icons/btn_text.svg">
+   <a href="#textpopup" data-rel="popup" data-position-to="window" data-transition="pop" class="thumbnail">
+      <img src="img/icons/btn_text.svg">
     </a>
+    <div id="textpopup" data-role="popup" data-theme="a" data-overlay-theme="a" class="ui-corner-all">
+      <div style="padding:10px 20px;">
+        <h4>Enter A Caption:</h4>
+        <textarea id="newtext" rows="2" cols="50" maxlength="86" placeholder="Hello!"></textarea>
+        <a href="#pageone" id="addbutton"><button data-mini="true" data-inline="true">Submit</button></a>
+        Maximum Characters: 86
+      </div>
   </div> 
 </div>
       
@@ -212,7 +219,7 @@
         </div>
         <br>
         <div>
-        <div class="row" style="float: left; width: 90%"><input id="newtext" type="text" value="Hello!">  </div>
+        <!--<div class="row" style="float: left; width: 90%"><input id="newtext" type="text" value="Hello!">  </div>-->
           
         <div class="col-sm-1 col-md-1 bw pic" style="float: right">
           <a id="save">
