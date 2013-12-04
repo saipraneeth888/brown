@@ -95,8 +95,7 @@
   <div data-role="header">
     <h1>StoryBoarder.... Beta</h1>
   </div>
-  <div>
-    <div class="row">
+<div class="row">
   <div class="col-sm-6 col-md-3">
     <a href ="#pagetwo" class="thumbnail">
       <img src="img/icons/btn_character.svg">
@@ -111,9 +110,16 @@
     <a href="#pagefour" class="thumbnail">
       <img src="img/icons/btn_background.svg">
     </a>  
-  </div>
+  </div>   
+  <div class="col-sm-6 col-md-3">
+    <a href id="addbutton" class="thumbnail">
+      <img src="img/icons/btn_text.svg">
+    </a>
+  </div> 
+</div>
+      
         <div data-role="popup" id="popupBackground" data-theme="none">
-        <div data-role="collapsible-set" data-theme="b" data-content-theme="c" data-collapsed-icon="arrow-r"data-expanded-icon="arrow-d" style="margin:10; width:250px;">
+        <div data-role="collapsible-set" data-theme="b" data-content-theme="c" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:10; width:250px;">
           <div data-role="collapsible" data-inset="false">
             <h2>Background</h2>
               <ul data-role="listview">
@@ -122,17 +128,8 @@
           </div>
         </div>
         </div>
-  <div class="col-sm-6 col-md-3">
-    <a href id="addbutton" class="thumbnail">
-      <img src="img/icons/btn_text.svg">
-    </a>
-  </div>
-  <!-- <div class="input-group">
-  <span class="input-group-addon">Text</span>
-  <input type="text" class="form-control" placeholder="Enter a text">
-</div> -->
-</div>
-  </div>
+      
+     
     <div data-role="content">
         <div class="container">
             <div class="row">
@@ -159,24 +156,15 @@
                  </div></div>-->
             </div>
         </div>
-  <br>
-  <div class="row"><input id="newtext" type="text" value="Hello!">  
-  
-    <div class="col-sm-6 col-md-3">
-    <a href id="save" class="thumbnail">
-      <img src="img/icons/btn_save.svg">
-    </a>
-  </div>
-</div>
-    <!-- <a href id="save" data-role="button" data-inline="true" data-mini="true">Save as Image</a> -->
+        <br>
+        <div class="row"><input id="newtext" type="text" value="Hello!">  
 
-<!-- <a href id="addbutton" data-role="button" data-inline="true" data-mini="true">Add this text</a> -->
-  
- <!--  <a href="#popupBackground" data-rel="popup" data-role="button" data-inline="true" data-mini="true" data-theme="b" data-transition="pop">Choose a Background</a> -->
-  
-
-  <!-- <a href ="#pagetwo" data-role="button" data-inline="true" data-mini="true">Images</a>
-  </div> -->
+          <div class="col-sm-6 col-md-3">
+          <a id="save" class="thumbnail">
+            <img src="img/icons/btn_save.svg">
+          </a>
+          </div>
+        </div>
   </div>
   <div data-role="footer">
     <h1>(c) StoryBoarder 2013</h1>
@@ -184,6 +172,7 @@
     
 </div>
 
+    
 <div data-role="page" id="pagetwo">
   <div data-role="header">
     <h1>Characters</h1>

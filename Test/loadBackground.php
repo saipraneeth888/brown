@@ -1,6 +1,6 @@
 <?php
     ini_set('error_log', '');
-	ini_set('display_errors', 'Off');
+    ini_set('display_errors', 'Off');
     
     $dir = 'img/Backgrounds';
     $files1 = scandir($dir);

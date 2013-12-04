@@ -223,7 +223,7 @@ $("#hand01").click(function () {
                    }
             layer[counter-1].draw();
 }
-image.src = "img/characters/character3svg";
+image.src = "img/characters/character3.svg";
 });
 
 $("#hand02").click(function () {
@@ -595,6 +595,17 @@ $("#prop6").click(function () {
 image.src = "img/props/prop6.svg";
 });
 
+
+$(".background").click(function () {
+    var newImage = new Image();
+    newImage.src = 'img/Backgrounds/' +$(this).attr('value');
+  //  alert(layer[counter-1]);
+    layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(newImage);
+    //layer[counter-1].find('#mainImageId')[0].setDraggable(false);
+    layer[counter-1].draw();
+});
+
+
 $("#background1").click(function () {
     var image = new Image();
     image.onload = function () {
@@ -605,57 +616,56 @@ $("#background1").click(function () {
             draggable: false,
             width: 600,//document.getElementById(c).offsetWidth,
             height: 600,//document.getElementById(c).offsetHeight,
-            id: id,
-            name: name
+            id: "mainImageId",
+            name: "mainImageId"
         });
-
-             // add the layer to the stage
-        layer[counter-1].add(img);
-        layer[counter-1].draw();
     } 
-image.src = "img/backgrounds/background1.svg";
+    image.src = "img/backgrounds/background1.svg";
+    
+    layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(image);
+    //layer[counter-1].get('#mainImageId')[0].setImage(image); //get the object with id "mainImageId"
+    layer[counter-1].draw();
 });
 
 $("#background2").click(function () {
     var image = new Image();
     image.onload = function () {
-        if(typeof id == 'undefined') id = '';
+        if(typeof id == 'undefined') id = 'mainImageId';
         if(typeof name == 'undefined') name = '';
         var img = new Kinetic.Image({
             image: image,
             draggable: false,
             width: 600,//document.getElementById(c).offsetWidth,
             height: 600,//document.getElementById(c).offsetHeight,
-            id: id,
-            name: name
+            id: "mainImageId",
+            name: "mainImageId"
         });
-
-             // add the layer to the stage
-        layer[counter-1].add(img);
-        layer[counter-1].draw();
     } 
-image.src = "img/backgrounds/background2.svg";
+    image.src = "img/backgrounds/background2.svg";
+    //layer[counter-1].get('#mainImageId')[0].setImage(image); //get the object with id "mainImageId"
+    layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(image);
+    layer[counter-1].draw();
 });
 
 $("#background3").click(function () {
+    
+    
     var image = new Image();
     image.onload = function () {
-        if(typeof id == 'undefined') id = '';
+        if(typeof id == 'undefined') id = 'mainImageId';
         if(typeof name == 'undefined') name = '';
         var img = new Kinetic.Image({
             image: image,
             draggable: false,
             width: 600,//document.getElementById(c).offsetWidth,
             height: 600,//document.getElementById(c).offsetHeight,
-            id: id,
-            name: name
+            id: "mainImageId",
+            name: "mainImageId"
         });
-
-             // add the layer to the stage
-        layer[counter-1].add(img);
-        layer[counter-1].draw();
     } 
-image.src = "img/backgrounds/background3.svg";
+    image.src = "img/backgrounds/background3.svg";
+    layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(image);
+    layer[counter-1].draw();
 });
 
 $("#background4").click(function () {
@@ -668,15 +678,13 @@ $("#background4").click(function () {
             draggable: false,
             width: 600,//document.getElementById(c).offsetWidth,
             height: 600,//document.getElementById(c).offsetHeight,
-            id: id,
-            name: name
+            id: "mainImageId",
+            name: "mainImageId"
         });
-
-             // add the layer to the stage
-        layer[counter-1].add(img);
-        layer[counter-1].draw();
     } 
-image.src = "img/backgrounds/background4.svg";
+    image.src = "img/backgrounds/background4.svg";
+    layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(image);
+    layer[counter-1].draw();
 });
 
 $("#background5").click(function () {
@@ -689,15 +697,13 @@ $("#background5").click(function () {
             draggable: false,
             width: 600,//document.getElementById(c).offsetWidth,
             height: 600,//document.getElementById(c).offsetHeight,
-            id: id,
-            name: name
+            id: "mainImageId",
+            name: "mainImageId"
         });
-
-             // add the layer to the stage
-        layer[counter-1].add(img);
-        layer[counter-1].draw();
     } 
-image.src = "img/backgrounds/background5.svg";
+    image.src = "img/backgrounds/background5.svg";
+    layer[counter-1].getChildren().filter(function(x) { return x.attrs.id == "mainImageId";})[0].setImage(image);
+    layer[counter-1].draw();
 });
 
 }    
