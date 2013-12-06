@@ -5,13 +5,15 @@ function init(){
     var width = window.innerWidth;
     var height = window.innerHeight;
     document.getElementById('wrapper').style.width = 3*width+"px";
-    document.getElementById('wrapper').style.height = width*0.5 +"px";
-    document.getElementById('first').style.width=width*0.5+"px";
-    document.getElementById('first').style.height=width*0.5+"px";
-    document.getElementById('second').style.width=width*0.5+"px";
-    document.getElementById('second').style.height=width*0.5+"px";
-    document.getElementById('third').style.width=width*0.5+"px";
-    document.getElementById('third').style.height=width*0.5+"px";
+    document.getElementById('wrapper').style.height = width*0.7 +"px";
+    document.getElementById('first').style.width=width*0.7+"px";
+    document.getElementById('first').style.height=width*0.7+"px";
+    document.getElementById('second').style.width=width*0.7+"px";
+    document.getElementById('second').style.height=width*0.7+"px";
+    document.getElementById('third').style.width=width*0.7+"px";
+    document.getElementById('third').style.height=width*0.7+"px";
+    document.getElementById('arrowspace1').style.width=width*0.2+"px";
+    document.getElementById('arrowspace2').style.width=width*0.2+"px";
     setStage(0);
   //  setStage(1);
  //   setStage(2);
@@ -28,8 +30,8 @@ function setStage(m) {
     }
  stage[m] = new Kinetic.Stage({
     container: c,
-    width: window.innerWidth*0.5,
-    height: window.innerWidth*0.5
+    width: window.innerWidth*0.7,
+    height: window.innerWidth*0.7
 });
 //alert(stage.getX()+''+stage.getY());
 
@@ -57,8 +59,8 @@ function draw(image,drag,id,name){
     var img = new Kinetic.Image({
         image: image,
         draggable: drag,
-        width: window.innerWidth*0.5,//document.getElementById(c).offsetWidth,
-        height: window.innerWidth*0.5,//document.getElementById(c).offsetHeight,
+        width: window.innerWidth*0.7,//document.getElementById(c).offsetWidth,
+        height: window.innerWidth*0.7,//document.getElementById(c).offsetHeight,
         id: id,
         name: name
     });
@@ -106,8 +108,8 @@ $("#addbutton").click(function () {
         oldtext[counter-1] = new Kinetic.Text({
             text: $("#newtext").val(),
             x: 0,
-            y: window.innerWidth*0.5*1/30,
-            width: window.innerWidth*0.5,
+            y: window.innerWidth*0.7*1/30,
+            width: window.innerWidth*0.7,
             fontFamily: 'Verdana',
             fontSize: window.innerWidth*0.04,
             padding: 10,
@@ -119,8 +121,8 @@ $("#addbutton").click(function () {
         var bound = new Kinetic.Rect({
             x: 0,
             y: 0,
-            width: window.innerWidth*0.5,
-            height: window.innerWidth*0.5*1/6-1,
+            width: window.innerWidth*0.7,
+            height: window.innerWidth*0.7*1/6-1,
             fill: 'white',
             stroke: 'black',
             name: "bound",
@@ -128,7 +130,7 @@ $("#addbutton").click(function () {
         });
         var group = new Kinetic.Group({
             x:0,
-            y:window.innerWidth*0.5*5/6,
+            y:window.innerWidth*0.7*5/6,
             draggable: false
         });
         group.add(bound);
