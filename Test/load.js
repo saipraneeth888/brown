@@ -757,16 +757,45 @@ document.getElementById('save').addEventListener('click', function() {
     width: document.getElementById(c).offsetWidth*3,
     height: document.getElementById(c).offsetHeight
     });
+    var rect = new Kinetic.Rect({
+        x: layer[0].getX(),
+        y: layer[0].getY(),
+        width: document.getElementById(c).offsetWidth,
+        height: document.getElementById(c).offsetHeight,
+      //  fill: 'green',
+        stroke: 'black',
+        strokeWidth: 5
+      });
+    layer[0].add(rect);
     stageJoin.add(layer[0]);
-    var layer1=layer[1];
-    var layer2=layer[2];
+
+
     if(layer[1]!=null){
+      var rect1 = new Kinetic.Rect({
+        x: layer[1].getX(),
+        y: layer[1].getY(),
+        width: document.getElementById(c).offsetWidth,
+        height: document.getElementById(c).offsetHeight,
+      //  fill: 'green',
+        stroke: 'black',
+        strokeWidth: 5
+      });
+    layer[1].add(rect1);
     layer[1].setX(document.getElementById(c).offsetWidth);
     stageJoin.add(layer[1]);}
   //  layer[1].setX(600);
   if(layer[2]!=null){
+    var rect2 = new Kinetic.Rect({
+        x:layer[2].getX(),
+        y:layer[2].getY(),
+        width: document.getElementById(c).offsetWidth,
+        height: document.getElementById(c).offsetHeight,
+      //  fill: 'green',
+        stroke: 'black',
+        strokeWidth: 5
+      });
+      layer[2].add(rect2)
     layer[2].setX(document.getElementById(c).offsetWidth*2);
-    
     stageJoin.add(layer[2]);}
         stageJoin.toDataURL({
           callback: function(dataUrl) {
